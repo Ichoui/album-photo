@@ -3,15 +3,20 @@ import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './core/layout/layout.component';
 import { NotfoundComponent } from './core/notfound/notfound.component';
 import { LibraryComponent } from './core/library/library.component';
+import { LoginComponent } from './core/login/login.component';
 
 const routes: Routes = [
   {
-    path:'',
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: '',
     component: LayoutComponent,
     children: [
       {
-        path:'',
-        redirectTo:'/library',
+        path: '',
+        redirectTo: '/library',
         pathMatch: 'full'
       },
       {
@@ -30,4 +35,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

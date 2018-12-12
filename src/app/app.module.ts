@@ -7,6 +7,7 @@ import { CoreComponent } from './core/core.component';
 import { NotfoundComponent } from './core/notfound/notfound.component';
 import { LayoutComponent } from './core/layout/layout.component';
 import { LibraryComponent } from './core/library/library.component';
+import { LoginComponent } from './core/login/login.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { LibraryComponent } from './core/library/library.component';
     CoreComponent,
     NotfoundComponent,
     LayoutComponent,
-    LibraryComponent
+    LibraryComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
