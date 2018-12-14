@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ScrollBooster } from '../../../assets/scripts/scrollbooster';
+
 @Component({
   selector: 'app-library',
   templateUrl: './library.component.html',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LibraryComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
   }
 
+  ngOnInit() {
+
+  }
 }
