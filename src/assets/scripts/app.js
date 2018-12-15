@@ -1,7 +1,12 @@
 $(function () {
+
+  ///////// GENERAL VARIABLES /////////
+
   let viewport = document.querySelector('.viewport');
   let content = viewport.querySelector('.img-container');
-  // let img = content.querySelector('img');
+
+  ///////// SCROLLBOOSTER /////////
+    // let img = content.querySelector('img');
 
   let sb = new ScrollBooster({
     viewport,
@@ -17,7 +22,7 @@ $(function () {
 
   content.addEventListener('load', () => {
     // update sizes/metrics after image load
-    sb.updateMetrics()
+    sb.updateMetrics();
 
     // set viewport position to the center of an image
     let offsetX = content.scrollWidth - viewport.offsetWidth;
@@ -25,6 +30,13 @@ $(function () {
     sb.setPosition({
       x: offsetX / 2,
       y: offsetY / 2
-    })
+    });
   })
+
+  ///////// MASONRY /////////
+
+  $('.img-container').masonry({
+    columnWidth: 80
+  });
+
 });
