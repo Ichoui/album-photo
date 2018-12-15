@@ -4,14 +4,15 @@ $(function () {
 
   let viewport = document.querySelector('.viewport');
   let content = viewport.querySelector('.img-container');
+  let body = $('body');
 
   ///////// SCROLLBOOSTER /////////
-    // let img = content.querySelector('img');
+  // let img = content.querySelector('img');
 
   let sb = new ScrollBooster({
     viewport,
     content,
-    emulateScroll: true,
+    emulateScroll: false,
     onUpdate: (data) => {
       content.style.transform = `translate(
       ${-data.position.x}px,
@@ -31,12 +32,27 @@ $(function () {
       x: offsetX / 2,
       y: offsetY / 2
     });
-  })
+  });
+
+  // TEST
+
+  let tabImg = [];
+  $('.images').each(function () {
+    let $this = $(this);
+    let elem = $this[0];
+
+    // elem.css({})
+
+  });
 
   ///////// MASONRY /////////
 
   $('.img-container').masonry({
-    columnWidth: 80
+    itemSelector: '.images',
+    columnWidth: 400,
+    gutter: 5
   });
 
+  ///////// APPLICATION /////////
+  body.css({'overflow':'hidden'});
 });
