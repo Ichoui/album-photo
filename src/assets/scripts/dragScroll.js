@@ -59,12 +59,9 @@
          var deltaX = evt.pageX - x2;
          var deltaY = evt.pageY - y2;
          if (deltaT <= 300) {
-             $scroller.stop().animate({
+             $scroller.animate({
                  scrollTop: "-=" + deltaY * 3,
                  scrollLeft: "-=" + deltaX * 3
-             }, 500, function (x, t, b, c, d) {
-                 // easeOutCirc function from http://gsgd.co.uk/sandbox/jquery/easing/
-                 return c * Math.sqrt(1 - (t = t / d - 1) * t) + b;
              });
          }
 

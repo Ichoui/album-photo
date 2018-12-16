@@ -1,20 +1,14 @@
-// ok
-* {
-  padding: 0;
-  margin: 0;
-}
+@import "../../../styles/stylefullpage";
 
 main.viewport {
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
   background-color: #283849;
   cursor: grab;
 
   .img-container {
     height: 100%;
     width: 100%;
-    overflow: hidden;
   }
   .wrapper {
     width: 437vw; // Taille calculée en fonction de la taille de l'image, ici 400px
@@ -22,31 +16,75 @@ main.viewport {
     //min-height: 100vh;
     //min-width: 200vw;
     //height: 2500px !important;
-
   }
 
   img.images {
-    width: 400px;
     //min-height: 250px;
+    width: 400px;
+    max-height: 400px;
     margin-bottom: 5px;
+  }
+  img.widther {
+    //width: 400px;
+  }
+  img.heigher {
+    //height: 400px;
+    //transform: rotate(-90deg);
+
+  }
+}
+
+////////////////////// RESPONSIVE //////////////////////
+@include breakpoint(xxs) {
+  main.viewport {
+    .img-container {
+      //overflow: auto;
+      //transition: ease-in;
+    }
+    .wrapper {
+    }
+
+    img.images {
+    }
+    img.widther {
+    }
+    img.heigher {
+    }
   }
 
 }
+@include breakpoint(xs) {
+  main.viewport {
+    .img-container {
+      //overflow: auto;
+      //transition: ease-in;
+    }
+    .wrapper {
+    }
 
-/*img {
-  background-color: yellow;
-  margin:5px;
-  width:800px !important;
-  height: 380px;
-  float: left;
-  padding: 10px;
-}*/
-/*.dragscroll {
-   width: 500px;
-   height: 380px;
-   float: left;
-   border: 1px solid rgb(31, 40, 49);
-   background-color: #283849;
-   overflow: auto;
-   padding: 10px;
- }*/
+    img.images {
+    }
+    img.widther {
+    }
+    img.heigher {
+    }
+  }
+}
+@include breakpoint(lg) {
+  main.viewport {
+    //overflow: hidden;
+    .img-container {
+      overflow: hidden;
+    }
+    .wrapper {
+    }
+
+    img.images {
+    }
+    img.widther {
+    }
+    img.heigher {
+    }
+  }
+
+}

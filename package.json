@@ -2,7 +2,7 @@
   "name": "album-photos",
   "version": "0.0.0",
   "scripts": {
-    "start": "ng serve --port=4682 --open",
+    "start": "ng serve --port=4682 --host 0.0.0.0 --disable-host-check",
     "build": "ng build",
     "test": "ng test"
   },
