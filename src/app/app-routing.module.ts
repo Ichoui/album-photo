@@ -4,13 +4,9 @@ import { LayoutComponent } from './core/layout/layout.component';
 import { NotfoundComponent } from './core/notfound/notfound.component';
 import { LibraryComponent } from './core/library/library.component';
 import { LoginComponent } from './core/login/login.component';
+import { AuthGuardService as AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: '/login',
-    pathMatch: 'full'
-  },
   {
     path: 'login',
     component: LoginComponent
@@ -18,8 +14,13 @@ const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
+    canActivate: [AuthGuard],
     children: [
-
+      {
+        path: '',
+        redirectTo: '/library',
+        pathMatch: 'full'
+      },
       {
         path: 'library',
         component: LibraryComponent,

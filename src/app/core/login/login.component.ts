@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { users } from '../../../environments/users';
 import { Router } from '@angular/router';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   tabAlbums = [];
   albumSelected;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private auth: AuthService) {
   }
 
   ngOnInit() {
@@ -32,45 +33,41 @@ export class LoginComponent implements OnInit {
   }
 
 
-  dataAlbums() {
+  checkingAlbum() {
     let albumChoice = this.albumForm.value.album;
     let passwordChoice = this.albumForm.value.password;
     let result = false;
 
     for (let i = 0; i < this.tabAlbums.length; i++) {
+      // si album existe
       if (albumChoice === this.tabAlbums[i].album) {
+        // si password associé à album existe
         if (passwordChoice === this.tabAlbums[i].password) {
           result = true;
           this.albumSelected = this.tabAlbums[i].album;
+          console.log(this.albumSelected);
+          this.auth.WriteLocalStorage(this.tabAlbums[i].album, '123');
         }
       }
     }
 
-
-    /*
-        this.tabAlbums.forEach(function (album) {
-          if (albumChoice === album) {
-            console.log('Album sélectionné : ' + album);
-
-            result = true;
-          }
-        });
-    */
     return result;
   }
 
 
   onSubmit() {
+    // check si l'album et le code d'accès existent
+    if (this.checkingAlbum()) {
+      if (this.albumSelected === 'maple') {
+        console.log(this.albumSelected);
+        this.router.navigate(['/library/maple']);
+      } else if (this.albumSelected === 'banff') {
 
-    this.dataAlbums();
-    // console.log(this.albumSelected);
-    if (this.dataAlbums()) {
+      }
+      else if (this.albumSelected === 'francois') {
 
-    } else {
-
+      }
     }
-
-    // this.router.navigate(['/library'])
   }
 
 }
