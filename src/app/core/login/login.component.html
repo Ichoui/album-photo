@@ -1,9 +1,13 @@
-<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-  <label for="email">Email</label>
-  <input id="email" type="text" formControlName="email">
+<form [formGroup]="albumForm" (ngSubmit)="onSubmit()">
+  <label for="album">Album</label>
+  <input id="album" type="text" formControlName="album" required="required">
 
-  <label for="password">Mot de passe</label>
-  <input id="password" type="text" formControlName="password">
+  <label for="password">Code d'accès</label>
+  <input id="password" type="password" formControlName="password" required="required">
 
-  <button type="submit" [disabled]="!userForm.valid">Se connecter</button>
+  <button type="submit" [disabled]="!albumForm.valid">Se connecter</button>
 </form>
+
+<p>
+  Form Status: {{ albumForm.status }}
+</p>

@@ -6,19 +6,22 @@ import { LibraryComponent } from './core/library/library.component';
 import { LoginComponent } from './core/login/login.component';
 
 const routes: Routes = [
+
+  {
+    path: '',
+    redirectTo: '/library',
+    pathMatch: 'full'
+  },
   {
     path: 'login',
     component: LoginComponent
   },
+
   {
     path: '',
     component: LayoutComponent,
     children: [
-      {
-        path: '',
-        redirectTo: '/library',
-        pathMatch: 'full'
-      },
+
       {
         path: 'library',
         component: LibraryComponent
