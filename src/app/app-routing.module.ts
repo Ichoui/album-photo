@@ -5,6 +5,8 @@ import { NotfoundComponent } from './core/notfound/notfound.component';
 import { LibraryComponent } from './core/library/library.component';
 import { LoginComponent } from './core/login/login.component';
 import { AuthGuardService as AuthGuard } from './auth/auth.guard';
+import { MapleComponent } from './core/library/maple/maple.component';
+import { BanffComponent } from './core/library/banff/banff.component';
 
 const routes: Routes = [
   {
@@ -24,6 +26,16 @@ const routes: Routes = [
       {
         path: 'library',
         component: LibraryComponent,
+        children: [
+          {
+            path: 'maple',
+            component: MapleComponent
+          },
+          {
+            path: 'banff',
+            component: BanffComponent
+          }
+        ]
       }
     ]
   },

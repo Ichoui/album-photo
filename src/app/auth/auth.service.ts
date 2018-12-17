@@ -11,7 +11,7 @@ export class AuthService {
     const token = localStorage.getItem('album');
     // Check whether the token is expired and return
     // true or false
-    if (token === 'maple123' || token === 'other123') {
+    if (token === 'maple123' || token === 'banff123') {
       return true;
     } else {
       return false;

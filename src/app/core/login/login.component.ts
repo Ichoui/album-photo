@@ -62,7 +62,7 @@ export class LoginComponent implements OnInit {
         console.log(this.albumSelected);
         this.router.navigate(['/library/maple']);
       } else if (this.albumSelected === 'banff') {
-
+        this.router.navigate(['/library/banff']);
       }
       else if (this.albumSelected === 'francois') {
 
