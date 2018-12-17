@@ -63,14 +63,13 @@ export class LoginComponent implements OnInit {
   onSubmit() {
 
     this.dataAlbums();
-    console.log(this.albumSelected);
+    // console.log(this.albumSelected);
     if (this.dataAlbums()) {
 
     } else {
 
     }
 
-    // console.log(this.testingUsers());
     // this.router.navigate(['/library'])
   }
 

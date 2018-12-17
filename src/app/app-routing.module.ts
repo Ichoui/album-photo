@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './core/layout/layout.component';
 import { NotfoundComponent } from './core/notfound/notfound.component';
 import { LibraryComponent } from './core/library/library.component';
 import { LoginComponent } from './core/login/login.component';
 
 const routes: Routes = [
-
   {
     path: '',
     redirectTo: '/library',
@@ -16,7 +15,6 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent
   },
-
   {
     path: '',
     component: LayoutComponent,
@@ -24,7 +22,7 @@ const routes: Routes = [
 
       {
         path: 'library',
-        component: LibraryComponent
+        component: LibraryComponent,
       }
     ]
   },
