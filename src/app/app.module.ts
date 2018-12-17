@@ -8,6 +8,7 @@ import { NotfoundComponent } from './core/notfound/notfound.component';
 import { LayoutComponent } from './core/layout/layout.component';
 import { LibraryComponent } from './core/library/library.component';
 import { LoginComponent } from './core/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LoginComponent } from './core/login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

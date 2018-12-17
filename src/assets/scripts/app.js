@@ -10,10 +10,10 @@ $(function () {
   ///////// DragScroll /////////
   bindDragScroll($container, $scroller);
 
+  // let viewport = document.querySelector('.img-container');
+  // let content = viewport.querySelector('.wrapper');
+/*
 
-  // let img = content.querySelector('img');
-
-  /*
     let sb = new ScrollBooster({
         viewport,
         content,
@@ -40,11 +40,11 @@ $(function () {
         let offsetX = content.scrollWidth - viewport.offsetWidth;
         let offsetY = content.scrollHeight - viewport.offsetHeight;
         sb.setPosition({
-          x: offsetX / 8,
-          y: offsetY / 8
+          x: offsetX / 2,
+          y: offsetY / 2
         });
       });
-  */
+*/
 
 
   ///////// MASONRY /////////
@@ -62,8 +62,6 @@ $(function () {
   img.each(function (e) {
     const $this = $(this);
     // console.log($this[0].width);
-    // $this.height();
-    // $this.width();
     if ($this[0].width > $this[0].height) {
       $this.addClass('widther');
     } else {
