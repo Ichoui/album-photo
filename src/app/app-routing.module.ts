@@ -29,6 +29,7 @@ const routes: Routes = [
         children: [
           {
             path: 'maple',
+            canActivate: [AuthGuard],
             component: MapleComponent
           },
           {

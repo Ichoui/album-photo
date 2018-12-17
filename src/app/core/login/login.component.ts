@@ -43,14 +43,13 @@ export class LoginComponent implements OnInit {
       if (albumChoice === this.tabAlbums[i].album) {
         // si password associé à album existe
         if (passwordChoice === this.tabAlbums[i].password) {
-          result = true;
+          // nom de l'album sur lequel on se dirige
           this.albumSelected = this.tabAlbums[i].album;
-          console.log(this.albumSelected);
           this.auth.WriteLocalStorage(this.tabAlbums[i].album, '123');
+          result = true;
         }
       }
     }
-
     return result;
   }
 

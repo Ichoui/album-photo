@@ -14,16 +14,14 @@ export class LibraryComponent implements OnInit {
   }
 
   ngOnInit() {
-    let lastKeyStorage;
-
-    lastKeyStorage = localStorage.getItem('album');
+    let lastKeyStorage = localStorage.getItem('album');
     console.log(lastKeyStorage);
-    if (this.router.url === '/library') {
+/*    if (this.router.url === '/library') {
       console.log(this.router.url);
-      if (lastKeyStorage === 'maple') {
+      if (lastKeyStorage === 'maple123') {
         // redirect vers /library/maple
       }
       // ...
-    }
+    }*/
   }
 }
