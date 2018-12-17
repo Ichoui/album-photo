@@ -8,7 +8,7 @@ import { LoginComponent } from './core/login/login.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/library',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
   {
