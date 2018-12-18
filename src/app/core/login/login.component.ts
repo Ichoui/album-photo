@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   tabAlbums = [];
   albumSelected;
   actualLocalStorageAlbum;
+  albumTyping;
 
   constructor(private router: Router, private auth: AuthService) {
   }
@@ -31,7 +32,7 @@ export class LoginComponent implements OnInit {
     for (let [key, value] of Object.entries(users)) {
       this.tabAlbums.push(value);
     }
-
+    this.albumTyping = null;
     this.actualLocalStorageAlbum = LoginComponent.alreadyLogin();
   }
 

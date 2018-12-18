@@ -1,4 +1,4 @@
-<form [formGroup]="albumForm" (ngSubmit)="onSubmit()" [class.win]=" albumForm.status === 'VALID'  ">
+<form [formGroup]="albumForm" (ngSubmit)="onSubmit()" [class.valid-form]=" albumForm.status === 'VALID'">
   <label for="album">Album</label>
   <input id="album" type="text" [(ngModel)]="albumTyping" formControlName="album" required="required">
 
@@ -14,7 +14,7 @@
 <p *ngIf="albumTyping === 'banff'">{{ albumTyping }}</p>
 <p *ngIf="albumTyping === 'francois'">{{ albumTyping }}</p>
 
-
 <p>
+  <!-- devenu une classe sur form-->
   Form Status: {{ albumForm.status }}
 </p>
