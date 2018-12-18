@@ -11,6 +11,7 @@ import { LoginComponent } from './core/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MapleComponent } from './core/library/maple/maple.component';
 import { BanffComponent } from './core/library/banff/banff.component';
+import { FrancoisComponent } from './core/library/francois/francois.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BanffComponent } from './core/library/banff/banff.component';
     LibraryComponent,
     LoginComponent,
     MapleComponent,
-    BanffComponent
+    BanffComponent,
+    FrancoisComponent
   ],
   imports: [
     BrowserModule,

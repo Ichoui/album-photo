@@ -15,13 +15,24 @@ export class LibraryComponent implements OnInit {
 
   ngOnInit() {
     let lastKeyStorage = localStorage.getItem('album');
-    console.log(lastKeyStorage);
-/*    if (this.router.url === '/library') {
-      console.log(this.router.url);
-      if (lastKeyStorage === 'maple123') {
-        // redirect vers /library/maple
+
+    // Route interdite
+    // Vérfication du token et redirection vers la page adéquate
+    if (this.router.url === '/library') {
+      switch (lastKeyStorage) {
+        case 'maple':
+          this.router.navigate(['/library/maple']);
+          break;
+        case 'banff':
+          this.router.navigate(['/library/banff']);
+          break;
+        case 'francois':
+          this.router.navigate(['/library/francois']);
+          break;
+        default:
+          this.router.navigate(['/notfound']);
+          break;
       }
-      // ...
-    }*/
+    }
   }
 }

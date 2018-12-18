@@ -7,6 +7,10 @@ import { LoginComponent } from './core/login/login.component';
 import { AuthGuardService as AuthGuard } from './auth/auth.guard';
 import { MapleComponent } from './core/library/maple/maple.component';
 import { BanffComponent } from './core/library/banff/banff.component';
+import { MapleGuard } from './auth/routes/maple.guard';
+import { BanffGuard } from './auth/routes/banff.guard';
+import { FrancoisComponent } from './core/library/francois/francois.component';
+import { FrancoisGuard } from './auth/routes/francois.guard';
 
 const routes: Routes = [
   {
@@ -29,12 +33,18 @@ const routes: Routes = [
         children: [
           {
             path: 'maple',
-            canActivate: [AuthGuard],
+            canActivate: [MapleGuard],
             component: MapleComponent
           },
           {
             path: 'banff',
+            canActivate: [BanffGuard],
             component: BanffComponent
+          },
+          {
+            path: 'francois',
+            canActivate: [FrancoisGuard],
+            component: FrancoisComponent
           }
         ]
       }

@@ -30,6 +30,8 @@ export class LoginComponent implements OnInit {
     for (let [key, value] of Object.entries(users)) {
       this.tabAlbums.push(value);
     }
+
+    LoginComponent.alreadyLogin();
   }
 
 
@@ -43,9 +45,9 @@ export class LoginComponent implements OnInit {
       if (albumChoice === this.tabAlbums[i].album) {
         // si password associé à album existe
         if (passwordChoice === this.tabAlbums[i].password) {
-          // nom de l'album sur lequel on se dirige
+          // album vers lequel on se dirige
           this.albumSelected = this.tabAlbums[i].album;
-          this.auth.WriteLocalStorage(this.tabAlbums[i].album, '123');
+          this.auth.writeLocalStorage(this.tabAlbums[i].album);
           result = true;
         }
       }
@@ -56,17 +58,28 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     // check si l'album et le code d'accès existent
+    // puis redirige vers l'album qu'il faut (entraîne de nouveaux traitements Guards)
     if (this.checkingAlbum()) {
-      if (this.albumSelected === 'maple') {
-        console.log(this.albumSelected);
-        this.router.navigate(['/library/maple']);
-      } else if (this.albumSelected === 'banff') {
-        this.router.navigate(['/library/banff']);
-      }
-      else if (this.albumSelected === 'francois') {
 
+      switch (this.albumSelected) {
+        case 'maple':
+          this.router.navigate(['/library/maple']);
+          break;
+        case 'banff':
+          this.router.navigate(['/library/banff']);
+          break;
+        case 'francois':
+          this.router.navigate(['/library/francois']);
+          break;
       }
     }
   }
 
+  static alreadyLogin(): string {
+    let localStorage = localStorage.getItem('album');
+
+    if (localStorage)  {
+     return localStorage.key(0);
+    }
+  }
 }
