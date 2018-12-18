@@ -1,12 +1,19 @@
-<form [formGroup]="albumForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="albumForm" (ngSubmit)="onSubmit()" [class.win]=" albumForm.status === 'VALID'  ">
   <label for="album">Album</label>
-  <input id="album" type="text" formControlName="album" required="required">
+  <input id="album" type="text" [(ngModel)]="albumTyping" formControlName="album" required="required">
 
   <label for="password">Code d'accès</label>
-  <input id="password" type="password" formControlName="password" required="required">
+  <input id="password" type="password" formControlName="password" [minlength]="7" required="required">
 
   <button type="submit" [disabled]="!albumForm.valid">Se connecter</button>
 </form>
+
+<p *ngIf="actualLocalStorageAlbum !== null">{{ actualLocalStorageAlbum }}</p>
+
+<p *ngIf="albumTyping === 'maple'">{{ albumTyping }}</p>
+<p *ngIf="albumTyping === 'banff'">{{ albumTyping }}</p>
+<p *ngIf="albumTyping === 'francois'">{{ albumTyping }}</p>
+
 
 <p>
   Form Status: {{ albumForm.status }}

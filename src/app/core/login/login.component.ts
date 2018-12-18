@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
 
   tabAlbums = [];
   albumSelected;
+  actualLocalStorageAlbum;
 
   constructor(private router: Router, private auth: AuthService) {
   }
@@ -31,7 +32,7 @@ export class LoginComponent implements OnInit {
       this.tabAlbums.push(value);
     }
 
-    LoginComponent.alreadyLogin();
+    this.actualLocalStorageAlbum = LoginComponent.alreadyLogin();
   }
 
 
@@ -76,10 +77,12 @@ export class LoginComponent implements OnInit {
   }
 
   static alreadyLogin(): string {
-    let localStorage = localStorage.getItem('album');
+    let ls = localStorage.key(0);
+    let result = null;
 
-    if (localStorage)  {
-     return localStorage.key(0);
+    if (localStorage.key(0)) {
+      return localStorage.getItem(ls);
     }
+    return result;
   }
 }
