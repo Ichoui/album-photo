@@ -4,13 +4,11 @@ import { LayoutComponent } from './core/layout/layout.component';
 import { NotfoundComponent } from './core/notfound/notfound.component';
 import { LibraryComponent } from './core/library/library.component';
 import { LoginComponent } from './core/login/login.component';
+import { AuthGuardService as AuthGuard } from './auth/auth.guard';
+import { MapleComponent } from './core/library/maple/maple.component';
+import { BanffComponent } from './core/library/banff/banff.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: '/library',
-    pathMatch: 'full'
-  },
   {
     path: 'login',
     component: LoginComponent
@@ -18,11 +16,27 @@ const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
+    canActivate: [AuthGuard],
     children: [
-
+      {
+        path: '',
+        redirectTo: '/library',
+        pathMatch: 'full'
+      },
       {
         path: 'library',
         component: LibraryComponent,
+        children: [
+          {
+            path: 'maple',
+            canActivate: [AuthGuard],
+            component: MapleComponent
+          },
+          {
+            path: 'banff',
+            component: BanffComponent
+          }
+        ]
       }
     ]
   },

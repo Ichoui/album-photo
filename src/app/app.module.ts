@@ -9,6 +9,8 @@ import { LayoutComponent } from './core/layout/layout.component';
 import { LibraryComponent } from './core/library/library.component';
 import { LoginComponent } from './core/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MapleComponent } from './core/library/maple/maple.component';
+import { BanffComponent } from './core/library/banff/banff.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     NotfoundComponent,
     LayoutComponent,
     LibraryComponent,
-    LoginComponent
+    LoginComponent,
+    MapleComponent,
+    BanffComponent
   ],
   imports: [
     BrowserModule,
