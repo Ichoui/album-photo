@@ -21,13 +21,16 @@ export class LibraryComponent implements OnInit {
     if (this.router.url === '/library') {
       switch (lastKeyStorage) {
         case 'maple':
-          this.router.navigate(['/library/maple']);
+          // this.router.navigate(['/library/maple']);
+          window.location.href = '/library/maple';
           break;
         case 'banff':
-          this.router.navigate(['/library/banff']);
+          // this.router.navigate(['/library/banff']);
+          window.location.href = '/library/banff';
           break;
         case 'francois':
-          this.router.navigate(['/library/francois']);
+          // this.router.navigate(['/library/francois']);
+          window.location.href = '/library/francois';
           break;
         default:
           this.router.navigate(['/notfound']);

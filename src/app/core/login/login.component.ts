@@ -36,7 +36,6 @@ export class LoginComponent implements OnInit {
     this.actualLocalStorageAlbum = LoginComponent.alreadyLogin();
   }
 
-
   checkingAlbum() {
     let albumChoice = this.albumForm.value.album;
     let passwordChoice = this.albumForm.value.password;
@@ -57,7 +56,6 @@ export class LoginComponent implements OnInit {
     return result;
   }
 
-
   onSubmit() {
     // check si l'album et le code d'accès existent
     // puis redirige vers l'album qu'il faut (entraîne de nouveaux traitements Guards)
@@ -65,13 +63,16 @@ export class LoginComponent implements OnInit {
 
       switch (this.albumSelected) {
         case 'maple':
-          this.router.navigate(['/library/maple']);
+          window.location.href = '/library/maple';
+          // this.router.navigate(['/library/maple']);
           break;
         case 'banff':
-          this.router.navigate(['/library/banff']);
+          window.location.href = '/library/banff';
+          // this.router.navigate(['/library/banff']);
           break;
         case 'francois':
-          this.router.navigate(['/library/francois']);
+          window.location.href = '/library/francois';
+          // this.router.navigate(['/library/francois']);
           break;
       }
     }

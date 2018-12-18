@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   /*
@@ -55,10 +56,11 @@ export class AuthService {
 
   /*
   * @function logout()
-  * Permet de vider à chaque logout le localStorage
+  * Permet de vider à chaque logout le localStorage puis redirige hors de l'application
   * */
-  public logout() {
+  public logout(): void {
     localStorage.removeItem('album');
+    this.router.navigate(['login'])
   }
 
 
