@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MapleComponent } from './core/library/maple/maple.component';
 import { BanffComponent } from './core/library/banff/banff.component';
 import { FrancoisComponent } from './core/library/francois/francois.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FrancoisComponent } from './core/library/francois/francois.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

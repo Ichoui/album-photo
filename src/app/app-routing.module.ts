@@ -4,13 +4,13 @@ import { LayoutComponent } from './core/layout/layout.component';
 import { NotfoundComponent } from './core/notfound/notfound.component';
 import { LibraryComponent } from './core/library/library.component';
 import { LoginComponent } from './core/login/login.component';
-import { AuthGuardService as AuthGuard } from './auth/auth.guard';
+import { AuthGuardService as AuthGuard } from './config/auth/auth.guard';
 import { MapleComponent } from './core/library/maple/maple.component';
 import { BanffComponent } from './core/library/banff/banff.component';
-import { MapleGuard } from './auth/routes/maple.guard';
-import { BanffGuard } from './auth/routes/banff.guard';
+import { MapleGuard } from './config/routes-guards/maple.guard';
+import { BanffGuard } from './config/routes-guards/banff.guard';
 import { FrancoisComponent } from './core/library/francois/francois.component';
-import { FrancoisGuard } from './auth/routes/francois.guard';
+import { FrancoisGuard } from './config/routes-guards/francois.guard';
 
 const routes: Routes = [
   {
