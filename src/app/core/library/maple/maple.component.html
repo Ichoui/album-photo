@@ -1,23 +1,8 @@
 <main class="viewport">
   <div class="img-container">
     <div class="wrapper">
-      <img class="images"
-           src="https://weraveyou.com/wp-content/uploads/2017/08/Armin-van-buuren-live-sept-2016-billboard-1548.jpg"
-           alt="">
-      <img class="images" src="https://pay.google.com/about/static/images/social/knowledge_graph_logo.png">
-      <img class="images" src="https://pay.google.com/about/static/images/social/knowledge_graph_logo.png">
-      <img class="images"
-           src="https://www.gettyimages.ie/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg"
-           alt="">
-      <img class="images"
-           src="https://www.gettyimages.ie/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg"
-           alt="">
-      <img class="images"
-           src="https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwisxq36z6HfAhUCuRoKHfEzAeQQjRx6BAgBEAU&url=%2Furl%3Fsa%3Di%26source%3Dimages%26cd%3D%26ved%3D%26url%3Dhttps%253A%252F%252Funsplash.com%252Fsearch%252Fphotos%252Fmiami%26psig%3DAOvVaw2BQIoSXScArQX5GzSrXpUt%26ust%3D1544956033908442&psig=AOvVaw2BQIoSXScArQX5GzSrXpUt&ust=1544956033908442"
-           alt="">
-      <img class="images" src="https://wallpaperbrowse.com/media/images/soap-bubble-1958650_960_720.jpg" alt="">
-      <img class="images" src="https://www.w3schools.com/w3css/img_lights.jpg" alt="">
-
+      <img *ngFor="let image of $image" src="{{ image.filepath }}" class="images" alt="">
+      {{$image}}
     </div>
   </div>
 </main>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RestService } from '../../../config/api/rest.service';
+import { Observable } from 'rxjs/internal/Observable';
+import { ImagesModel } from '../../../config/models/images.model';
 
 @Component({
   selector: 'app-maple',
@@ -8,14 +10,23 @@ import { RestService } from '../../../config/api/rest.service';
 })
 export class MapleComponent implements OnInit {
 
+  public $image: ImagesModel[];
+  images;
+
   constructor(private imgService: RestService) {
-    console.log(this.imgService.getMaple().subscribe(images => {
-        console.log(images);
-      }));
+
   }
 
   ngOnInit() {
+    this.imgService.getMaple()
+      .subscribe((img: ImagesModel) => this.imgService = {
+        // this.$image = img;
+        _id: img['id'],
+        name: img['name'],
+        filepath: img['filepath']
+      });
 
+    console.log(this.$image);
   }
 
 }
