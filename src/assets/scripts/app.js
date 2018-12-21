@@ -34,9 +34,9 @@ $(function () {
 
       console.log(sb);
       content.addEventListener('load', () => {
-        // update sizes/metrics after image load
+        // update sizes/metrics after images load
         sb.updateMetrics();
-        // set viewport position to the center of an image
+        // set viewport position to the center of an images
         let offsetX = content.scrollWidth - viewport.offsetWidth;
         let offsetY = content.scrollHeight - viewport.offsetHeight;
         sb.setPosition({
@@ -50,7 +50,7 @@ $(function () {
   ///////// MASONRY /////////
   $wrapper.masonry({
     itemSelector: '.images',
-    columnWidth: '.images', // Doit être de la taille d'une image
+    columnWidth: '.images', // Doit être de la taille d'une images
     gutter: 5
   });
 
@@ -58,7 +58,7 @@ $(function () {
   body.css({'overflow': 'hidden'});
 
   // Images width height
-  // Pour gérer orientation image et donc width
+  // Pour gérer orientation images et donc width
   img.each(function (e) {
     const $this = $(this);
     // console.log($this[0].width);

@@ -1,8 +1,8 @@
 <main class="viewport">
   <div class="img-container">
     <div class="wrapper">
-      <img *ngFor="let image of $image" src="{{ image.filepath }}" class="images" alt="">
-      {{$image}}
+      <img *ngFor="let image of images$ | async" src="{{ image.filepath }}" class="images" alt="">
+      {{image}}
     </div>
   </div>
 </main>
