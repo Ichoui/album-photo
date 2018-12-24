@@ -12,9 +12,10 @@ export class RestService {
   constructor(private http: HttpClient) {
   }
 
-  getMaple(): Observable<Toto> {
+  getMaple(): Observable<Toto[]> {
     return this.http.get('http://api.ichoui.fr/maple').pipe(
-      map(data => data.images),
+    // @ts-ignore
+      map(data => data.images)
     );
   }
 }

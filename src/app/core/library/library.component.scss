@@ -1,89 +1,59 @@
 @import "../../../styles/stylefullpage";
 
-main.viewport {
+drag-scroll.viewport {
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 0vh); // - le layout menu
   background-color: #283849;
   cursor: grab;
 
+  ng-masonry-grid.grid {
+    width: 330vw !important; // Taille calculée en fonction de la taille de l'images, ici 300px
+    max-width: unset !important; // permet d'étendre la width de la grille
+  }
   .img-container {
     height: 100%;
     width: 100%;
   }
-  .wrapper {
-    width: 437vw; // Taille calculée en fonction de la taille de l'images, ici 400px
-    //height:900px;
-    //min-height: 100vh;
-    //min-width: 200vw;
-    //height: 2500px !important;
-  }
 
   img.images {
-    //min-height: 250px;
     width: 400px;
     max-height: 400px;
-    margin-bottom: 5px;
-  }
-  img.widther {
-    //width: 400px;
-  }
-  img.heigher {
-    //height: 400px;
-    //transform: rotate(-90deg);
-
+    //margin-bottom: 5px; // gutter ?
   }
 }
 
 ////////////////////// RESPONSIVE //////////////////////
 @include breakpoint(xxs) {
-  main.viewport {
+  drag-scroll.viewport {
     .img-container {
-      //overflow: auto;
-      //transition: ease-in;
-    }
-    .wrapper {
     }
 
     img.images {
     }
-    img.widther {
-    }
-    img.heigher {
-    }
   }
 
 }
+
 @include breakpoint(xs) {
-  main.viewport {
+  drag-scroll.viewport {
     .img-container {
       //overflow: auto;
       //transition: ease-in;
     }
-    .wrapper {
-    }
 
     img.images {
     }
-    img.widther {
-    }
-    img.heigher {
-    }
   }
 }
+
 @include breakpoint(lg) {
-  main.viewport {
+  drag-scroll.viewport {
     //overflow: hidden;
     .img-container {
       overflow: hidden;
     }
-    .wrapper {
-    }
 
     img.images {
-    }
-    img.widther {
-    }
-    img.heigher {
     }
   }
 

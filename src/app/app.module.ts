@@ -13,6 +13,8 @@ import { MapleComponent } from './core/library/maple/maple.component';
 import { BanffComponent } from './core/library/banff/banff.component';
 import { FrancoisComponent } from './core/library/francois/francois.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgMasonryGridModule } from 'ng-masonry-grid';
+import { DragScrollModule } from 'ngx-drag-scroll/lib';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgMasonryGridModule,
+    DragScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]

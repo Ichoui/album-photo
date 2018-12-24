@@ -1,8 +1,21 @@
-<main class="viewport">
-  <div class="img-container">
-    <div class="wrapper">
-      <img *ngFor="let image of images$ | async" src="{{ image.filepath }}" class="images" alt="">
-      {{image}}
-    </div>
-  </div>
-</main>
+<!--<main class="viewport">-->
+<!--<div class="img-container">-->
+<!--<div class="wrapper">-->
+<!--&lt;!&ndash;&ndash;&gt;<img *ngFor="let image of images$ | async" src="{{ image.filepath }}" class="images" alt="">-->
+<!---->
+<!--</div>-->
+<!--</div>-->
+<!--</main>-->
+
+<drag-scroll class="viewport">
+
+  <ng-masonry-grid
+    class="grid"
+    [masonryOptions]="{ transitionDuration: '0.8s', gutter: 5 }"
+    [useImagesLoaded]="true">
+    <ng-masonry-grid-item *ngFor="let image of images$ | async">
+      <img src="{{ image.filepath }}" class="images" name="{{image.name}}">
+    </ng-masonry-grid-item>
+  </ng-masonry-grid>
+
+</drag-scroll>
