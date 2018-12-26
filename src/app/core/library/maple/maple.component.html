@@ -1,7 +1,7 @@
-<main class="viewport">
-  <div class="content">
+<drag-scroll class="viewport">
+  <!--<div class="content">-->
     <ng-masonry-grid
-      class="grid"
+      class="grid content"
       [masonryOptions]="{ transitionDuration: '0.8s', gutter: 8 }"
       [useImagesLoaded]="true">
       <ng-masonry-grid-item *ngFor="let image of images$ | async">
@@ -10,5 +10,5 @@
              name="{{image.name}}">
       </ng-masonry-grid-item>
     </ng-masonry-grid>
-  </div>
-</main>
+  <!--</div>-->
+</drag-scroll>

@@ -1,6 +1,6 @@
 @import "../../../styles/stylefullpage";
 
-main.viewport {
+.viewport {
   width: 100vw;
   height: 100vh;
   background-color: $background;
@@ -9,11 +9,9 @@ main.viewport {
 
   .content {
     width: 305vw;
-    height: 200vh;
   }
 
   ng-masonry-grid.grid {
-    height: 20px;
     max-width: unset !important; // permet d'étendre la width de la grille
   }
   ng-masonry-grid-item {
