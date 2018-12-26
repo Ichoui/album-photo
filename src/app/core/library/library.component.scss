@@ -3,7 +3,7 @@
 main.viewport {
   width: 100vw;
   height: calc(100vh - 0vh); // - le layout menu
-  background-color: #283849;
+  background-color: $background;
   cursor: grab;
   overflow: hidden;
 
@@ -17,6 +17,8 @@ main.viewport {
   }
   ng-masonry-grid-item {
     width: 400px !important;
+    border:3px solid white;
+    border-radius: 5px;
     img.images {
 
       //max-height: 400px;

@@ -3,4 +3,24 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: $font;
+  color: $color-white
+}
+
+// Button
+a.btn-underlined {
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #e44040;
+    transition: width 0s cubic-bezier(.42,.12,.31,.99);
+    pointer-events: none;
+  }
+  &:hover {
+    outline:0;
+  }
 }

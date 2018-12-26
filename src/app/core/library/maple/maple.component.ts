@@ -14,7 +14,7 @@ export class MapleComponent implements OnInit {
 
   public images$ = this.imgService.getMaple();
 
-  constructor(private imgService: RestService, private scriptService: ScriptService) {
+  constructor(private imgService: RestService) {
   }
 
   ngOnInit() {
@@ -28,12 +28,9 @@ export class MapleComponent implements OnInit {
       onUpdate: (data) => {
         content.style.transform = `translate(
       ${-data.position.x}px,
-      ${-data.position.y}px
-    )`;
-        // and also metrics: data.viewport['width'|'height'] and data.cotent['width'|'height']
+      ${-data.position.y}px )`;
       },
 
-      // ...other options
     });
   }
 

@@ -1,0 +1,11 @@
+@import "../../../styles/stylefullpage";
+
+
+nav {
+  height: 5vh;
+  display: flex;
+  background-color: $background;
+  img {
+    width: 150px;
+  }
+}
