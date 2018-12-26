@@ -4,11 +4,24 @@
   padding: 0;
   margin: 0;
   font-family: $font;
+  background-color: $background;
   color: $color-white
 }
 
+ul > li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 // Button
-a.btn-underlined {
+a.anim-underlined {
+  overflow: hidden;
+  padding-bottom: 3px;
+  box-sizing: border-box;
+  position: relative;
   &:before {
     content: '';
     position: absolute;
@@ -16,11 +29,39 @@ a.btn-underlined {
     bottom: 0;
     height: 2px;
     width: 0;
-    background-color: #e44040;
-    transition: width 0s cubic-bezier(.42,.12,.31,.99);
+    background-color: $underlined;
+    transition: width 0s cubic-bezier(.42, .12, .31, .99);
+    pointer-events: none;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: $underlined;
+    transition: width .4s cubic-bezier(.42, .12, .31, .99);
     pointer-events: none;
   }
   &:hover {
-    outline:0;
+    outline: 0;
+    &:before {
+      width: 100%;
+      transition: width .4s cubic-bezier(.42, .12, .31, .99);
+    }
+    &:after {
+      width: 100%;
+      background: 0 0;
+      transition: all 0s cubic-bezier(.42, .12, .31, .99);
+    }
   }
 }
+
+a.anim-fulfill {
+  span:hover {
+    color: $underlined;
+    transition: all .4s cubic-bezier(.42, .12, .31, .99);
+  }
+}
+

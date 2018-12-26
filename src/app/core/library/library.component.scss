@@ -2,39 +2,64 @@
 
 main.viewport {
   width: 100vw;
-  height: calc(100vh - 0vh); // - le layout menu
+  height: 100vh;
   background-color: $background;
   cursor: grab;
   overflow: hidden;
 
   .content {
     width: 305vw;
+    height: 200vh;
   }
 
   ng-masonry-grid.grid {
-    width: 305vw !important; // Taille calculée en fonction de la taille de l'images, ici 300px
+    height: 20px;
     max-width: unset !important; // permet d'étendre la width de la grille
   }
   ng-masonry-grid-item {
-    width: 400px !important;
-    border:3px solid white;
+    border: 3px solid white;
     border-radius: 5px;
     img.images {
 
-      //max-height: 400px;
     }
   }
 }
 
+
 ////////////////////// RESPONSIVE //////////////////////
-@include breakpoint(xxs) {
+main.viewport {
+  @include breakpoint(xxs) {
 
-}
+  }
 
-@include breakpoint(xs) {
+  @include breakpoint(xs) {
 
-}
+    ng-masonry-grid.grid {
+      margin-top: 8.5vh !important;
+    }
+    ng-masonry-grid-item {
+      width: 200px !important;
+    }
 
-@include breakpoint(lg) {
+  }
 
+  @include breakpoint(lg) {
+
+    ng-masonry-grid.grid {
+      //width: 305vw !important; // Taille calculée en fonction de la taille de l'images, ici 300px
+      margin-top: 9vh !important;
+    }
+    ng-masonry-grid-item {
+      width: 300px !important;
+    }
+  }
+
+  @include breakpoint(xxl) {
+
+    ng-masonry-grid.grid {
+    }
+    ng-masonry-grid-item {
+      width: 400px !important;
+    }
+  }
 }
