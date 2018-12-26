@@ -1,60 +1,38 @@
 @import "../../../styles/stylefullpage";
 
-drag-scroll.viewport {
+.viewport {
   width: 100vw;
   height: calc(100vh - 0vh); // - le layout menu
   background-color: #283849;
   cursor: grab;
+  overflow: auto;
+
+  .content {
+    width: 305vw;
+  }
 
   ng-masonry-grid.grid {
-    width: 330vw !important; // Taille calculée en fonction de la taille de l'images, ici 300px
+    width: 305vw !important; // Taille calculée en fonction de la taille de l'images, ici 300px
     max-width: unset !important; // permet d'étendre la width de la grille
   }
-  .img-container {
-    height: 100%;
-    width: 100%;
-  }
+  ng-masonry-grid-item {
+    width: 400px !important;
+    img.images {
 
-  img.images {
-    width: 400px;
-    max-height: 400px;
-    //margin-bottom: 5px; // gutter ?
+      //max-height: 400px;
+    }
   }
 }
 
 ////////////////////// RESPONSIVE //////////////////////
 @include breakpoint(xxs) {
-  drag-scroll.viewport {
-    .img-container {
-    }
-
-    img.images {
-    }
-  }
 
 }
 
 @include breakpoint(xs) {
-  drag-scroll.viewport {
-    .img-container {
-      //overflow: auto;
-      //transition: ease-in;
-    }
 
-    img.images {
-    }
-  }
 }
 
 @include breakpoint(lg) {
-  drag-scroll.viewport {
-    //overflow: hidden;
-    .img-container {
-      overflow: hidden;
-    }
-
-    img.images {
-    }
-  }
 
 }

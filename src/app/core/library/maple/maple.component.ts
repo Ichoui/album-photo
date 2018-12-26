@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RestService } from '../../../config/api/rest.service';
 import { ScriptService } from '../../../config/scripts/scripts.service';
+import ScrollBooster from 'scrollbooster';
 
 
 @Component({
@@ -17,6 +18,24 @@ export class MapleComponent implements OnInit {
   }
 
   ngOnInit() {
+    let viewport = document.querySelector('.viewport');
+    let content = document.querySelector('.content');
+    let sb = new ScrollBooster({
+      viewport: viewport, // required
+      content: content, // required
+      handle: document.querySelector('.grid'),
+      bounce: true,
+      onUpdate: (data) => {
+        content.style.transform = `translate(
+      ${-data.position.x}px,
+      ${-data.position.y}px
+    )`;
+        // and also metrics: data.viewport['width'|'height'] and data.cotent['width'|'height']
+      },
+
+      // ...other options
+    });
   }
+
 
 }
