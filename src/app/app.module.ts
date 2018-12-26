@@ -34,7 +34,6 @@ import { DragScrollModule } from 'ngx-drag-scroll/lib';
     ReactiveFormsModule,
     HttpClientModule,
     NgMasonryGridModule,
-    DragScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,11 +1,11 @@
 @import "../../../styles/stylefullpage";
 
-.viewport {
+main.viewport {
   width: 100vw;
   height: calc(100vh - 0vh); // - le layout menu
   background-color: #283849;
   cursor: grab;
-  overflow: auto;
+  overflow: hidden;
 
   .content {
     width: 305vw;
