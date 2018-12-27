@@ -1,6 +1,7 @@
-<drag-scroll class="viewport" [scrollbar-hidden]="hideScrollbar">
+<drag-scroll class="viewport" scrollbar-hidden="false">
   <!--<div class="content">-->
   <ng-masonry-grid
+    id="test"
     class="grid content"
     [masonryOptions]="{ transitionDuration: '0.8s', gutter: 8 }"
     [useImagesLoaded]="true">

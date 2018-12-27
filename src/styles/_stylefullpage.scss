@@ -16,7 +16,7 @@ a {
   text-decoration: none;
 }
 
-// Button
+// Buttons
 a.anim-underlined {
   overflow: hidden;
   padding-bottom: 3px;
@@ -63,5 +63,10 @@ a.anim-fulfill {
     color: $underlined;
     transition: all .4s cubic-bezier(.42, .12, .31, .99);
   }
+}
+
+// Don't know why : Ne fonctionne pas ailleurs.
+.drag-scroll-content {
+  overflow: hidden !important;
 }
 
