@@ -12,12 +12,16 @@ ul > li {
   list-style-type: none;
 }
 
-a {
+a,
+button{
   text-decoration: none;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 // Buttons
-a.anim-underlined {
+.anim-underlined {
   overflow: hidden;
   padding-bottom: 3px;
   box-sizing: border-box;
@@ -58,8 +62,12 @@ a.anim-underlined {
   }
 }
 
-a.anim-fulfill {
+.anim-fulfill {
   span:hover {
+    color: $underlined;
+    transition: all .4s cubic-bezier(.42, .12, .31, .99);
+  }
+  &:hover {
     color: $underlined;
     transition: all .4s cubic-bezier(.42, .12, .31, .99);
   }

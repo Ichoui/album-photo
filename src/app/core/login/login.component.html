@@ -1,23 +1,27 @@
-<form [formGroup]="albumForm" (ngSubmit)="onSubmit()" [class.valid-form]=" albumForm.status === 'VALID'">
-  <label for="album">Album</label>
-  <input id="album" type="text" [(ngModel)]="albumTyping" formControlName="album" required="required">
+<div class="circle-image" [ngSwitch]="albumTyping">
+  <img *ngSwitchCase="'maple'" src="../../../assets/images/favicon.ico">
+  <img *ngSwitchCase="'banff'" src="../../../assets/images/francis.jpg">
+  <img *ngSwitchCase="'francois'" src="../../../assets/images/francis.jpg">
+  <img *ngSwitchDefault src="../../../assets/images/Logo_Favicon.jpg">
+</div>
 
-  <label for="password">Code d'accès</label>
-  <input id="password" type="password" formControlName="password" [minlength]="7" required="required">
-
-  <button type="submit" [disabled]="!albumForm.valid">Se connecter</button>
+<form [formGroup]="albumForm" (ngSubmit)="onSubmit()"
+      [class.valid-form]="albumTyping === 'maple' || albumTyping === 'francois' || albumTyping === 'banff'
+      && albumForm.status === 'VALID'">
+  <div>
+    <label for="album">Album</label>
+    <input id="album" type="text" [(ngModel)]="albumTyping" formControlName="album" required="required">
+  </div>
+  <div>
+    <label for="password">Code d'accès</label>
+    <input id="password" type="password" formControlName="password" [minlength]="7" required="required">
+  </div>
+  <div>
+    <button class="anim-underlined" type="submit" [disabled]="!albumForm.valid">Se connecter</button>
+  </div>
 </form>
 
-<p *ngIf="actualLocalStorageAlbum !== null">{{ actualLocalStorageAlbum }}</p>
-
-<p *ngIf="albumTyping === 'maple'">{{ albumTyping }}</p>
-<p *ngIf="albumTyping === 'banff'">{{ albumTyping }}</p>
-<p *ngIf="albumTyping === 'francois'">
-  {{ albumTyping }}
-<!-- Pour francois : rounded images de photo saint des seins-->
-</p>
-
-<p>
-  <!-- devenu une classe sur form-->
-  Form Status: {{ albumForm.status }}
-</p>
+<div class="credits">
+  <p>Credits to : <a href="https://gitlab.com/Ichoui" class="anim-fulfill" target="_blank">Ichoui®</a></p>
+  <p><a href="http://api.ichoui.fr" class="anim-underlined" target="_blank">http://api.ichoui.fr</a></p>
+</div>

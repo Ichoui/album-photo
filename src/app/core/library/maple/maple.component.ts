@@ -1,10 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RestService } from '../../../config/api/rest.service';
 import ScrollBooster from 'scrollbooster';
 import { ScriptService } from '../../../config/scripts/scripts.service';
-// declare var $:JQueryStatic;
-declare var jQuery: any;
-
 
 @Component({
   selector: 'app-maple',
@@ -28,9 +25,9 @@ export class MapleComponent implements OnInit {
     this.script.load('app').then(data => data);
     let content = document.querySelector('.content');
     setTimeout(function () {
-      console.log(test.offsetHeight);
+      console.log(content.offsetHeight);
       // content['style'].minHeight = content.offsetHeight + 'px';
-      content['style'].maxHeight = "250px";
+      // content['style'].minHeight = "250px";
     }, 1500);
   }
 
@@ -43,18 +40,16 @@ export class MapleComponent implements OnInit {
       content: content, // required
       bounce: false,
       emulateScroll: false,
-
       textSelection: false,
       onUpdate: (data) => {
-        // console.log(data);
-        content['style'].transform = `translate3d(
+        content['style'].transform = `translate(
           ${-data.position.x}px,
-          ${-data.position.y}px, 0 )`;
+          ${-data.position.y}px
+           `;
+        // content['style'].minHeight = content.offsetHeight + 'px';
 
       },
-
     });
+
   }
-
-
 }
