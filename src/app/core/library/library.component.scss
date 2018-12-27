@@ -6,12 +6,18 @@
   background-color: $background;
   cursor: grab;
   overflow: hidden;
+  transition: all ease .1s;
 
   .content {
     width: 305vw;
+    height: 1200px;
+    min-height: 250vh;
+    max-height: fit-content;
+    transition: all ease .1s;
   }
 
   ng-masonry-grid.grid {
+    //overflow: hidden;
     max-width: unset !important; // permet d'étendre la width de la grille
   }
   ng-masonry-grid-item {
@@ -20,12 +26,16 @@
     img.images {
 
     }
+    &:hover {
+      transform:scale(1.03);
+    transition: all ease-in .4s;
+    }
   }
 }
 
 
 ////////////////////// RESPONSIVE //////////////////////
-main.viewport {
+.viewport {
   @include breakpoint(xxs) {
 
   }

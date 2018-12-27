@@ -1,14 +1,14 @@
-<drag-scroll class="viewport">
+<drag-scroll class="viewport" [scrollbar-hidden]="hideScrollbar">
   <!--<div class="content">-->
-    <ng-masonry-grid
-      class="grid content"
-      [masonryOptions]="{ transitionDuration: '0.8s', gutter: 8 }"
-      [useImagesLoaded]="true">
-      <ng-masonry-grid-item *ngFor="let image of images$ | async">
-        <img class="images"
-             src="{{ image.filepath }}"
-             name="{{image.name}}">
-      </ng-masonry-grid-item>
-    </ng-masonry-grid>
+  <ng-masonry-grid
+    class="grid content"
+    [masonryOptions]="{ transitionDuration: '0.8s', gutter: 8 }"
+    [useImagesLoaded]="true">
+    <ng-masonry-grid-item *ngFor="let image of images$ | async">
+      <img class="images"
+           src="{{ image.filepath }}"
+           name="{{image.name}}">
+    </ng-masonry-grid-item>
+  </ng-masonry-grid>
   <!--</div>-->
 </drag-scroll>
