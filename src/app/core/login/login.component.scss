@@ -58,9 +58,14 @@ form {
     font-size: 1.5em;
     border: none;
   }
+  button:disabled {
+    color:graytext;
+    cursor: auto;
+  }
 }
 form.valid-form {
-  border-color: $underlined;
+  //border-color: $underlined;
+  box-shadow: 0 0 30px -5px $underlined;
 }
 
 .credits {

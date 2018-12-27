@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    // formulaires
+    // AngularForm
     this.albumForm = new FormGroup({
       album: new FormControl(),
       password: new FormControl()

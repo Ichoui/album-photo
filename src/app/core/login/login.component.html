@@ -6,14 +6,14 @@
 </div>
 
 <form [formGroup]="albumForm" (ngSubmit)="onSubmit()"
-      [class.valid-form]="albumTyping === 'maple' || albumTyping === 'francois' || albumTyping === 'banff'
+      [class.valid-form]="(albumTyping === 'maple' || albumTyping === 'francois' || albumTyping === 'banff')
       && albumForm.status === 'VALID'">
   <div>
-    <label for="album">Album</label>
+    <label for="album" class="anim-fulfill">Album</label>
     <input id="album" type="text" [(ngModel)]="albumTyping" formControlName="album" required="required">
   </div>
   <div>
-    <label for="password">Code d'accès</label>
+    <label for="password" class="anim-fulfill">Code d'accès</label>
     <input id="password" type="password" formControlName="password" [minlength]="7" required="required">
   </div>
   <div>
