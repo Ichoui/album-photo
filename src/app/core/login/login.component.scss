@@ -17,14 +17,21 @@
   overflow: hidden;
   display: flex;
   justify-content: center;
-  img {
+  img, video {
+    height: 120%;
+    margin-top: -10%;
+  }
+  img.logo {
+    height: auto;
     width: 100%;
+    margin-top: auto;
   }
 }
 
 form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 40vw;
   height: 40vh;
   margin: 0 auto;
@@ -40,7 +47,7 @@ form {
     width: 220px; // width input
     text-align: left;
     margin: 0 auto;
-    padding-right: calc((10px + 3px) *2); //10px pour padding left/right input & 3px pour border left/right
+    padding-right: calc((10px + 3px) * 2); //10px pour padding left/right input & 3px pour border left/right
   }
   input {
     width: 220px;
@@ -51,7 +58,7 @@ form {
     border: $border-white-3;
     border-radius: $radius-5;
   }
-  > div {
+  > div:not(:first-child) {
     margin-top: 15px;
   }
   div:last-child {
