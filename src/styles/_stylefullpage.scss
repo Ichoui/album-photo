@@ -33,7 +33,7 @@ button{
     bottom: 0;
     height: 2px;
     width: 0;
-    background-color: $underlined;
+    background-color: $color-red;
     transition: width 0s cubic-bezier(.42, .12, .31, .99);
     pointer-events: none;
   }
@@ -44,7 +44,7 @@ button{
     bottom: 0;
     height: 2px;
     width: 0;
-    background-color: $underlined;
+    background-color: $color-red;
     transition: width .4s cubic-bezier(.42, .12, .31, .99);
     pointer-events: none;
   }
@@ -64,11 +64,11 @@ button{
 
 .anim-fulfill {
   span:hover {
-    color: $underlined;
+    color: $color-red;
     transition: all .4s cubic-bezier(.42, .12, .31, .99);
   }
   &:hover {
-    color: $underlined;
+    color: $color-red;
     transition: all .4s cubic-bezier(.42, .12, .31, .99);
   }
 }
