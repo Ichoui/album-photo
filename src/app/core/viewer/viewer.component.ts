@@ -21,8 +21,6 @@ export class ViewerComponent implements OnInit {
     this.format = this.viewerService.format;
 
     this.formatImage();
-    document.getElementById('close').className = 'close';
-    console.log(document.getElementById('close'));
   }
 
   formatImage() {
