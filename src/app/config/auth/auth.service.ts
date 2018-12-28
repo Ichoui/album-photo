@@ -16,8 +16,8 @@ export class AuthService {
   *  Lien avec le auth.guard.ts
   */
   public isAuthenticated(): boolean {
-    const token = localStorage.getItem('album');
-    const keyToken = localStorage.key(0);
+    const token = sessionStorage.getItem('album');
+    const keyToken = sessionStorage.key(0);
 
     // if (token === 'maple123' || token === 'banff123') {
     return keyToken === 'album';
@@ -29,7 +29,7 @@ export class AuthService {
   * Retourne Nom de l'album / false
   * */
   public isGlobalFunction(album): string | boolean {
-    let storage = localStorage.getItem('album');
+    let storage = sessionStorage.getItem('album');
     if (storage === album) {
       return album;
     } else {
@@ -59,7 +59,7 @@ export class AuthService {
   * Permet de vider à chaque logout le localStorage puis redirige hors de l'application
   * */
   public logout(): void {
-    localStorage.removeItem('album');
+    sessionStorage.removeItem('album');
     this.router.navigate(['login'])
   }
 
@@ -68,8 +68,8 @@ export class AuthService {
   * Ecrit dans le localStorage une key / value
   * album : {album}_key
   * */
-  public writeLocalStorage(album): void {
-    localStorage.setItem('album', album);
+  public writeSessionStorage(album): void {
+    sessionStorage.setItem('album', album);
   }
 
 
