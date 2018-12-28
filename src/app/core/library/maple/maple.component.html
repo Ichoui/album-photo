@@ -5,8 +5,13 @@
     [useImagesLoaded]="true">
     <ng-masonry-grid-item *ngFor="let image of images$ | async">
       <img class="images"
+           (click)="openViewer($event)"
            src="{{ image.filepath }}"
            name="{{image.name}}">
     </ng-masonry-grid-item>
   </ng-masonry-grid>
 </drag-scroll>
+
+<app-viewer *ngIf="viewerPopup">
+  <div id="close" class="close" (click)="closeViewer($event)">CLOSE</div>
+</app-viewer>

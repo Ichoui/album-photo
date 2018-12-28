@@ -15,6 +15,7 @@ import { FrancoisComponent } from './core/library/francois/francois.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgMasonryGridModule } from 'ng-masonry-grid';
 import { DragScrollModule } from 'ngx-drag-scroll/lib';
+import { ViewerComponent } from './core/viewer/viewer.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DragScrollModule } from 'ngx-drag-scroll/lib';
     LoginComponent,
     MapleComponent,
     BanffComponent,
-    FrancoisComponent
+    FrancoisComponent,
+    ViewerComponent,
   ],
   imports: [
     BrowserModule,

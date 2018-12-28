@@ -1,0 +1,57 @@
+@import "../../../styles/stylefullpage";
+
+:host {
+  position: absolute;
+  background-color: $background;
+  opacity: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  .viewer-content {
+    position: relative;
+
+    img {
+
+    }
+    .name {
+
+    }
+  }
+}
+
+////////////////////// RESPONSIVE //////////////////////
+:host {
+
+  @include breakpoint(xxs) {
+
+  }
+  @include breakpoint(xs) {
+    .viewer-content {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      img.widther {
+        //transform: rotate(90deg);
+        width: 90vw;
+      }
+      img.heighter {
+        width: 90vw;
+        max-height: 90vh;
+      }
+    }
+  }
+
+  @include breakpoint(lg) {
+
+  }
+
+  @include breakpoint(xxl) {
+
+  }
+}

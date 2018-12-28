@@ -21,8 +21,8 @@
     user-select: none;
   }
   ng-masonry-grid-item {
-    border: 3px solid white;
-    border-radius: 5px;
+    border: $border-white-3;
+    border-radius: $radius-5;
     img.images {
 
     }
@@ -32,6 +32,12 @@
       z-index: 99;
       box-shadow: 1px 1px 18px 3px #2d2828;
     }
+  }
+
+  .close {
+    position: absolute;
+    top:5px;
+    right: 5px;
   }
 }
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RestService } from '../../../config/api/rest.service';
 import ScrollBooster from 'scrollbooster';
 import { ScriptService } from '../../../config/scripts/scripts.service';
+import { ViewerService } from '../../viewer/viewer.service';
 
 @Component({
   selector: 'app-maple',
@@ -16,19 +17,24 @@ export class MapleComponent implements OnInit {
 
   public images$ = this.imgService.getMaple();
   hideScrollbar = true;
+  viewerPopup = false;
 
-  constructor(private imgService: RestService, private script: ScriptService) {
+  constructor(private imgService: RestService,
+              private scriptService: ScriptService,
+              private viewerService: ViewerService) {
   }
 
   ngOnInit() {
     this.scrollBooster();
-    this.script.load('app').then(data => data);
-    let content = document.querySelector('.content');
-    setTimeout(function () {
-      console.log(content.offsetHeight);
-      // content['style'].minHeight = content.offsetHeight + 'px';
-      // content['style'].minHeight = "250px";
-    }, 1500);
+
+    // this.scriptService.load('app').then(data => data);
+    // tests
+    /* let content = document.querySelector('.content');
+     setTimeout(function () {
+       // console.log(content.offsetHeight);
+       // content['style'].minHeight = content.offsetHeight + 'px';
+       // content['style'].minHeight = "250px";
+     }, 1500);*/
   }
 
   scrollBooster() {
@@ -52,4 +58,27 @@ export class MapleComponent implements OnInit {
     });
 
   }
+
+  openViewer(event) {
+    console.log(event);
+    this.viewerPopup = true;
+    let src = event.target.currentSrc;
+    let name = event.target.attributes[3].nodeValue;
+    let width = event.target.clientWidth;
+    let height = event.target.clientHeight;
+    let format;
+
+    if (width >= height) {
+      format = 'paysage';
+    } else {
+      format = 'portrait';
+    }
+
+    this.viewerService.dataViewer(src, name, format);
+  }
+
+  closeViewer(event) {
+    this.viewerPopup = false;
+  }
+
 }

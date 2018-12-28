@@ -11,15 +11,13 @@ export class AuthService {
 
   /*
   *  @function isAuthenticated()
-  *  Permet de vérifier si le localStorage album existe
+  *  Permet de vérifier si la sessionStorage album existe
   *  et donc vérifier si l'utilisateur a pu se connecter avec un bon code d'accès
   *  Lien avec le auth.guard.ts
   */
   public isAuthenticated(): boolean {
     const token = sessionStorage.getItem('album');
     const keyToken = sessionStorage.key(0);
-
-    // if (token === 'maple123' || token === 'banff123') {
     return keyToken === 'album';
   }
 
