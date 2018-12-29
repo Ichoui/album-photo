@@ -9,5 +9,4 @@ $(function () {
 */
   // let $grid = $('.grid');
   // $grid.css('height', '2500px !important');
-
 });

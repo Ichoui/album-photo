@@ -26,15 +26,7 @@ export class MapleComponent implements OnInit {
 
   ngOnInit() {
     this.scrollBooster();
-
     // this.scriptService.load('app').then(data => data);
-    // tests
-    /* let content = document.querySelector('.content');
-     setTimeout(function () {
-       // console.log(content.offsetHeight);
-       // content['style'].minHeight = content.offsetHeight + 'px';
-       // content['style'].minHeight = "250px";
-     }, 1500);*/
   }
 
   scrollBooster() {
@@ -60,25 +52,19 @@ export class MapleComponent implements OnInit {
   }
 
   openViewer(event) {
-    console.log(event);
     this.viewerPopup = true;
-    let src = event.target.currentSrc;
-    let name = event.target.attributes[3].nodeValue;
-    let width = event.target.clientWidth;
-    let height = event.target.clientHeight;
-    let format;
-
-    if (width >= height) {
-      format = 'paysage';
-    } else {
-      format = 'portrait';
-    }
-
-    this.viewerService.dataViewer(src, name, format);
+    this.viewerService.dataViewer(event);
   }
 
-  closeViewer(event) {
-    this.viewerPopup = false;
+  closeViewer() {
+    // @ts-ignore
+    let appViewer = document.getElementsByTagName('app-viewer');
+    appViewer[0].style.opacity = 0.0;
+
+    setTimeout(e => {
+      this.viewerPopup = false;
+    }, 500);
+
   }
 
 }

@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgMasonryGridModule } from 'ng-masonry-grid';
 import { DragScrollModule } from 'ngx-drag-scroll/lib';
 import { ViewerComponent } from './core/viewer/viewer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ViewerComponent } from './core/viewer/viewer.component';
     ReactiveFormsModule,
     HttpClientModule,
     NgMasonryGridModule,
-    DragScrollModule
+    DragScrollModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
