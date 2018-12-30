@@ -96,8 +96,9 @@
   @include breakpoint(xs) {
 
     form {
-      width: 98vw;
+      width: calc(100% - 6px);
       margin: 0;
+      padding:0;
     }
   }
 

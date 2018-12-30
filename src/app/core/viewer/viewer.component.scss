@@ -9,7 +9,7 @@
   right: 0;
   bottom: 0;
   z-index: 1000;
-  transition:  .5s linear;
+  transition: .5s linear;
   .viewer-content {
     position: relative;
     width: 100vw;
@@ -24,9 +24,9 @@
     }
     .name {
       position: absolute;
-      top:5px;
-      transform: translate(-50%,-50%);
-      left:50%;
+      top: 5px;
+      transform: translate(-50%, -50%);
+      left: 50%;
     }
   }
 }
@@ -35,52 +35,47 @@
 :host {
 
   @include breakpoint(xxs) {
-
+    img.landscape {
+      width: auto;
+      height: auto;
+      max-width: 95vw;
+      max-height: 95vh;
+    }
+    img.portrait {
+      width: auto;
+      height: auto;
+      max-width: 95vw;
+      max-height: 95vh;
+    }
   }
-  @include breakpoint(xs) {
 
-      img.landscape {
-        //transform: rotate(90deg);
-        width: 90vw;
-      }
-      img.portrait {
-        width: 90vw;
-        max-height: 90vh;
-      }
+  @include breakpoint(xs) {
+    img.landscape {
+      width: auto;
+      height: auto;
+      max-width: 95vw;
+      max-height: 95vh;
+    }
+    img.portrait {
+      width: auto;
+      height: auto;
+      max-width: 95vw;
+      max-height: 95vh;
+    }
   }
 
   @include breakpoint(lg) {
-
-  }
-
-  @include breakpoint(xxl) {
-
-  }
-
-
-  // LANDSCAPE SMARTPHONE
-  @include breakpoint(xxs-landscape) {
-
     img.landscape {
-      height: 85vh;
       width: auto;
+      height: auto;
+      max-width: 85vw;
+      max-height: 85vh;
     }
     img.portrait {
-      max-height: 80vh;
       width: auto;
+      height: auto;
+      max-height: 100vh;
+      transform: rotate(90deg);
     }
   }
-  @include breakpoint(xs-landscape) {
-
-    img.landscape {
-      height: 85vh;
-      width: auto;
-    }
-    img.portrait {
-      max-height: 80vh;
-      width: auto;
-    }
-  }
-
-
 }
