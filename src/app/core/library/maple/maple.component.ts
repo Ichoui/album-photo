@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { RestService } from '../../../config/api/rest.service';
-import ScrollBooster from 'scrollbooster';
-import { ScriptService } from '../../../config/scripts/scripts.service';
+import { ApiRestService } from '../../../config/providers/api-rest.service';
+import { ScriptService } from '../../../config/providers/scripts.service';
 import { ViewerService } from '../../viewer/viewer.service';
+import { ScrollerService } from '../../../config/providers/scroller.service';
 
 @Component({
   selector: 'app-maple',
@@ -19,37 +19,17 @@ export class MapleComponent implements OnInit {
   hideScrollbar = true;
   viewerPopup = false;
 
-  constructor(private imgService: RestService,
+  constructor(private imgService: ApiRestService,
               private scriptService: ScriptService,
-              private viewerService: ViewerService) {
+              private viewerService: ViewerService,
+              private scrollerService: ScrollerService) {
   }
 
   ngOnInit() {
-    this.scrollBooster();
+    this.scrollerService.scrollBooster();
     // this.scriptService.load('app').then(data => data);
   }
 
-  scrollBooster() {
-    let viewport = document.querySelector('.viewport');
-    let content = document.querySelector('.content');
-
-    let sb = new ScrollBooster({
-      viewport: viewport, // required
-      content: content, // required
-      bounce: false,
-      emulateScroll: false,
-      textSelection: false,
-      onUpdate: (data) => {
-        content['style'].transform = `translate(
-          ${-data.position.x}px,
-          ${-data.position.y}px
-           `;
-        // content['style'].minHeight = content.offsetHeight + 'px';
-
-      },
-    });
-
-  }
 
   openViewer(event) {
     this.viewerPopup = true;

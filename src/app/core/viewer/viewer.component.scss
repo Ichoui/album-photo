@@ -37,11 +37,11 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      img.widther {
+      img.landscape {
         //transform: rotate(90deg);
         width: 90vw;
       }
-      img.heighter {
+      img.portrait {
         width: 90vw;
         max-height: 90vh;
       }

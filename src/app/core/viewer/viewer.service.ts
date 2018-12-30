@@ -25,7 +25,7 @@ export class ViewerService {
     let format;
 
     if (width >= height) {
-      format = 'paysage';
+      format = 'landscape';
     } else {
       format = 'portrait';
     }

@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class RestService {
+export class ApiRestService {
 
   constructor(private http: HttpClient) {
   }

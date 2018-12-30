@@ -8,13 +8,6 @@
   overflow: hidden;
   //transition: all ease .1s;
 
-  .content {
-    //width: 280vw;
-    //height: auto;
-    //min-height: 300vh;
-    //max-height: fit-content;
-  }
-
   ng-masonry-grid.grid {
     //overflow: hidden;
     max-width: unset !important; // permet d'étendre la width de la grille
@@ -48,13 +41,10 @@
   }
 
   @include breakpoint(xs) {
-    .content {
-      width: 622vw;
-      min-height: 500vh;
-
-    }
     ng-masonry-grid.grid {
       margin: 8.5vh 0 0 5px !important;
+      width: 622vw;
+      min-height: 500vh;
     }
     ng-masonry-grid-item {
       width: 200px !important;
@@ -64,10 +54,8 @@
 
   @include breakpoint(lg) {
 
-    .content {
-      width: 492vw;
-    }
     ng-masonry-grid.grid {
+      width: 492vw;
       //width: 305vw !important; // Taille calculée en fonction de la taille de l'images, ici 300px
       margin: 9vh 0 0 15px !important;
     }
@@ -77,11 +65,9 @@
   }
 
   @include breakpoint(xxl) {
-    .content {
+    ng-masonry-grid.grid {
       width: 497vw;
       min-height: 200vh;
-    }
-    ng-masonry-grid.grid {
     }
     ng-masonry-grid-item {
       width: 400px !important;

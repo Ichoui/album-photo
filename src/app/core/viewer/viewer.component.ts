@@ -15,7 +15,6 @@ import { zoomIn, zoomOut } from 'ng-animate';
 })
 export class ViewerComponent implements OnInit {
 
-  zoom: false;
   constructor(private viewerService: ViewerService) {
   }
 
@@ -28,18 +27,18 @@ export class ViewerComponent implements OnInit {
     this.name = this.viewerService.name;
     this.format = this.viewerService.format;
 
-    this.formatImage();
+    this.orientationImage();
   }
 
-  formatImage() {
+  orientationImage() {
     let viewedImage = document.getElementById('viewed-image');
     // console.log(viewedImage);
     console.log(this.format);
 
-    if (this.format === 'paysage') {
-      viewedImage.className = 'widther';
+    if (this.format === 'landscape') {
+      viewedImage.className = 'landscape';
     } else {
-      viewedImage.className = 'heighter';
+      viewedImage.className = 'portrait';
     }
   }
 
