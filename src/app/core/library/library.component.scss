@@ -6,10 +6,8 @@
   background-color: $background;
   cursor: grab;
   overflow: hidden;
-  //transition: all ease .1s;
 
   ng-masonry-grid.grid {
-    //overflow: hidden;
     max-width: unset !important; // permet d'étendre la width de la grille
     user-select: none;
   }
@@ -31,10 +29,13 @@
 .close {
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 20px;
   border-radius: $radius-5;
   border: 1px solid;
   padding: 5px;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 ////////////////////// RESPONSIVE //////////////////////

@@ -93,12 +93,18 @@ export class LoginComponent implements OnInit {
           window.location.href = '/library/francois';
           // this.router.navigate(['/library/francois']);
           break;
+        case 'jump':
+          window.location.href = '/library/jump';
+          // this.router.navigate(['/library/jump']);
+          break;
       }
     }
   }
 
-  // Vérifie si l'utilisateur est déjà login
-  // Renvoie null ou nom de session
+  /*
+   * Vérifie si l'utilisateur est déjà login
+  * Renvoie null ou nom de session
+  */
   static alreadyLogin(): string {
     let ls = sessionStorage.key(0);
     let result = null;

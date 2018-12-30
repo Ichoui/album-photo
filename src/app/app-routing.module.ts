@@ -11,6 +11,8 @@ import { MapleGuard } from './config/routes-guards/maple.guard';
 import { BanffGuard } from './config/routes-guards/banff.guard';
 import { FrancoisComponent } from './core/library/francois/francois.component';
 import { FrancoisGuard } from './config/routes-guards/francois.guard';
+import { JumpGuard } from './config/routes-guards/jump.guard';
+import { JumpComponent } from './core/library/jump/jump.component';
 
 const routes: Routes = [
   {
@@ -45,6 +47,10 @@ const routes: Routes = [
             path: 'francois',
             canActivate: [FrancoisGuard],
             component: FrancoisComponent
+          }, {
+            path: 'jump',
+            canActivate: [JumpGuard],
+            component: JumpComponent
           }
         ]
       }

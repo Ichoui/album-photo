@@ -18,4 +18,25 @@ export class ApiRestService {
       map(data => data.images)
     );
   }
+
+  getFrancois(): Observable<Toto[]> {
+    return this.http.get('http://api.ichoui.fr/francois').pipe(
+      // @ts-ignore
+      map(data => data.images)
+    );
+  }
+
+  getBanff(): Observable<Toto[]> {
+    return this.http.get('http://api.ichoui.fr/banff').pipe(
+      // @ts-ignore
+      map(data => data.images)
+    );
+  }
+
+  getJump(): Observable<Toto[]> {
+    return this.http.get('http://api.ichoui.fr/jump').pipe(
+      // @ts-ignore
+      map(data => data.images)
+    );
+  }
 }

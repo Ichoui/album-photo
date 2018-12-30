@@ -4,9 +4,11 @@
   padding: 0;
   margin: 0;
   font-family: $font;
-  background-color: $background;
   color: $color-white
 }
+body {
+  background: $background;
+ }
 
 ul > li {
   list-style-type: none;

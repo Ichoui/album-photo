@@ -21,6 +21,8 @@ export class ViewerComponent implements OnInit {
   src;
   name;
   format;
+  nameAppear = false; // choisir si on affiche ou non le nom d'image
+
 
   ngOnInit() {
     this.src = this.viewerService.src;
@@ -32,7 +34,6 @@ export class ViewerComponent implements OnInit {
 
   orientationImage() {
     let viewedImage = document.getElementById('viewed-image');
-    // console.log(viewedImage);
     console.log(this.format);
 
     if (this.format === 'landscape') {
@@ -41,6 +42,7 @@ export class ViewerComponent implements OnInit {
       viewedImage.className = 'portrait';
     }
   }
+
 
 
 }

@@ -17,6 +17,7 @@ import { NgMasonryGridModule } from 'ng-masonry-grid';
 import { DragScrollModule } from 'ngx-drag-scroll/lib';
 import { ViewerComponent } from './core/viewer/viewer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { JumpComponent } from './core/library/jump/jump.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BanffComponent,
     FrancoisComponent,
     ViewerComponent,
+    JumpComponent,
   ],
   imports: [
     BrowserModule,

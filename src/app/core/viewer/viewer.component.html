@@ -1,5 +1,5 @@
-<div id="ee" class="viewer-content" [@zoomIn] >
+<div class="viewer-content" [@zoomIn] >
   <ng-content></ng-content>
+  <div *ngIf="nameAppear" class="name">{{ name }}</div>
   <img id="viewed-image" src="{{ src }}">
-  <div class="name">{{ name }}</div>
 </div>

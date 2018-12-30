@@ -12,12 +12,21 @@
   transition:  .5s linear;
   .viewer-content {
     position: relative;
-
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     img {
 
     }
     .name {
-
+      position: absolute;
+      top:5px;
+      transform: translate(-50%,-50%);
+      left:50%;
     }
   }
 }
@@ -29,14 +38,7 @@
 
   }
   @include breakpoint(xs) {
-    .viewer-content {
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
+
       img.landscape {
         //transform: rotate(90deg);
         width: 90vw;
@@ -45,7 +47,6 @@
         width: 90vw;
         max-height: 90vh;
       }
-    }
   }
 
   @include breakpoint(lg) {
@@ -55,4 +56,31 @@
   @include breakpoint(xxl) {
 
   }
+
+
+  // LANDSCAPE SMARTPHONE
+  @include breakpoint(xxs-landscape) {
+
+    img.landscape {
+      height: 85vh;
+      width: auto;
+    }
+    img.portrait {
+      max-height: 80vh;
+      width: auto;
+    }
+  }
+  @include breakpoint(xs-landscape) {
+
+    img.landscape {
+      height: 85vh;
+      width: auto;
+    }
+    img.portrait {
+      max-height: 80vh;
+      width: auto;
+    }
+  }
+
+
 }

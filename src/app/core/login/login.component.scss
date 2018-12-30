@@ -5,101 +5,111 @@
   justify-content: center;
   flex-direction: column;
   height: 85vh;
-}
 
-.circle-image {
-  border: $border-white-3;
-  border-radius: 50%;
-  margin: 20px auto;
-  padding: 5px;
-  width: 125px;
-  height: 125px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  img, video {
-    height: 120%;
-    margin-top: -10%;
+  .circle-image {
+    border: $border-white-3;
+    border-radius: 50%;
+    margin: 20px auto;
+    padding: 5px;
+    width: 125px;
+    height: 125px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    img, video {
+      height: 120%;
+      margin-top: -10%;
+    }
+    img.logo {
+      height: auto;
+      width: 100%;
+      margin-top: auto;
+    }
   }
-  img.logo {
-    height: auto;
-    width: 100%;
-    margin-top: auto;
-  }
-}
 
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 40vw;
-  height: 40vh;
-  margin: 0 auto;
-  border: $border-white-3;
-  border-radius: $radius-5;
-  padding: 10px;
-  text-align: center;
-  max-width: 460px;
-  max-height: 300px;
-  font-size: 1.2em;
-  label {
-    display: block;
-    width: 220px; // width input
-    text-align: left;
-    margin: 0 auto;
-    padding-right: calc((10px + 3px) * 2); //10px pour padding left/right input & 3px pour border left/right
-  }
-  input {
-    width: 220px;
-    padding: 5px 10px;
-    margin-top: 5px;
-    font-size: 1.2em;
-    text-transform: uppercase;
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 40vh;
     border: $border-white-3;
     border-radius: $radius-5;
-  }
-  > div:not(:first-child) {
-    margin-top: 15px;
-  }
-  div:last-child {
-    margin-top: 30px;
+    padding: 10px;
+    text-align: center;
+    max-width: 460px;
+    max-height: 300px;
+    font-size: 1.2em;
+    label {
+      display: block;
+      width: 220px; // width input
+      text-align: left;
+      margin: 0 auto;
+      padding-right: calc((10px + 3px) * 2); //10px pour padding left/right input & 3px pour border left/right
+    }
+    input {
+      width: 220px;
+      padding: 5px 10px;
+      margin-top: 5px;
+      font-size: 1.2em;
+      text-transform: uppercase;
+      border: $border-white-3;
+      border-radius: $radius-5;
+      background: $background;
+    }
+    > div:not(:first-child) {
+      margin-top: 15px;
+    }
+    div:last-child {
+      margin-top: 30px;
+    }
+
+    button {
+      font-size: 1.5em;
+      border: none;
+      background-color: transparent;
+    }
+    button:disabled {
+      color: lighten($background, 25%);
+      cursor: not-allowed;
+    }
   }
 
-  button {
-    font-size: 1.5em;
-    border: none;
+  form.valid-form {
+    //border-color: $color-red;
+    box-shadow: 0 0 30px -5px $color-red;
   }
-  button:disabled {
-    color: lighten($background, 25%);
-    cursor: not-allowed;
+
+  .credits {
+    position: absolute;
+    bottom: 5px;
+    transform: translate(-50%, -50%);
+    left: 50%;
   }
-}
-
-form.valid-form {
-  //border-color: $color-red;
-  box-shadow: 0 0 30px -5px $color-red;
-}
-
-.credits {
-  position: fixed;
-  bottom: 5px;
-  transform: translate(-50%, -50%);
-  left: 50%;
 }
 
 ////////////////////// RESPONSIVE //////////////////////
-@include breakpoint(xxs) {
+:host {
+  @include breakpoint(xxs) {
 
-}
+  }
 
-@include breakpoint(xs) {
+  @include breakpoint(xs) {
 
-}
+    form {
+      width: 98vw;
+      margin: 0;
+    }
+  }
 
-@include breakpoint(lg) {
+  @include breakpoint(md) {
+    form {
+      width: 40vw;
+      margin: 0 auto;
 
-}
+    }
+  }
 
-@include breakpoint(xxl) {
+  @include breakpoint(xxl) {
 
+  }
 }

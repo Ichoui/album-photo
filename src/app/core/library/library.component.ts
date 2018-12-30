@@ -31,6 +31,10 @@ export class LibraryComponent implements OnInit {
           // this.router.navigate(['/library/francois']);
           window.location.href = '/library/francois';
           break;
+        case 'jump':
+          // this.router.navigate(['/library/jump']);
+          window.location.href = '/library/jump';
+          break;
         default:
           this.router.navigate(['/notfound']);
           break;

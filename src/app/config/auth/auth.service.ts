@@ -50,6 +50,9 @@ export class AuthService {
     return this.isGlobalFunction('francois');
   }
 
+  public isJump(): string | boolean {
+    return this.isGlobalFunction('jump');
+  }
 
 
   /*

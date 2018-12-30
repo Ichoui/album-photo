@@ -10,5 +10,9 @@ export const users = {
   francois: {
     album: 'francois',
     password: '#cindywithlove'
+  },
+  jump: {
+    album: 'jump',
+    password: '#nostradamitch'
   }
 };
