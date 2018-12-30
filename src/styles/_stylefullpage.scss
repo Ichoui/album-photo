@@ -13,7 +13,7 @@ ul > li {
 }
 
 a,
-button{
+button {
   text-decoration: none;
   &:hover {
     cursor: pointer;
@@ -70,6 +70,10 @@ button{
   &:hover {
     color: $color-red;
     transition: all .4s cubic-bezier(.42, .12, .31, .99);
+    .icon-cancel {
+      color: $color-red;
+      transition: all .4s cubic-bezier(.42, .12, .31, .99);
+    }
   }
 }
 

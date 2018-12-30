@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "start": "ng serve --port=4682 --host 0.0.0.0 --open",
-    "build": "ng build",
-    "test": "ng test"
+    "build": "ng build"
   },
   "private": true,
   "dependencies": {

@@ -17,6 +17,7 @@ import { NgMasonryGridModule } from 'ng-masonry-grid';
 import { DragScrollModule } from 'ngx-drag-scroll/lib';
 import { ViewerComponent } from './core/viewer/viewer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RandomComponent } from './random/random.component';
 
 @NgModule({
   declarations: [

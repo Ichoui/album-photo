@@ -30,8 +30,11 @@
 
 .close {
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 10px;
+  right: 10px;
+  border-radius: $radius-5;
+  border: 1px solid;
+  padding: 5px;
 }
 
 ////////////////////// RESPONSIVE //////////////////////
