@@ -12,9 +12,10 @@
  - Ajouter une ``règle de redirection`` dans ``/core/library/library.component.ts``
  - Créer le ``component`` associé (ng g c /core/library/{newalbum}), puis
    récupérer le contenu d'un .html et .ts d'un component similaire <br>
-  <b>Style :</b><br>
-   <ul><li>possibilité d'ajouter ``un style propre à un album`` via le .scss,</li>
-   <li><b>SINON</b> changer la ligne du style dans le .ts associé par ``'../library.component.scss'``</li></ul>
+  <b>Style (dans le .ts):</b><br>
+   <ul><li>possibilité d'ajouter <b>un style propre à un album</b>(3 lignes : propre, générique, masonry),</li>
+   <li><b>SINON</b> remplacer celle présente dans un component similaire (2 lignes : générique, masonry)
+   <li><u>Attention</u> à toujours conserver le style Masonry</li>
 
 ---
 ##### Ce projet est avant tout une application web tournant sous Angular 7.0. Testé sur iPhone 7Plus en responsive.

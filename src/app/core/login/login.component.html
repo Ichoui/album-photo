@@ -2,13 +2,14 @@
   <img *ngSwitchCase="'maple'" src="../../../assets/images/maple.jpg">
   <video *ngSwitchCase="'banff'" src="../../../assets/images/banff.mov" autoplay loop></video>
   <img *ngSwitchCase="'francois'" src="../../../assets/images/francis.jpg">
-  <img *ngSwitchCase="'jump'" src="../../../assets/images/maple.jpg">
+  <img *ngSwitchCase="'jump'" src="../../../assets/images/jump.png">
   <img *ngSwitchDefault  class="logo" src="../../../assets/images/Logo_Favicon.jpg">
 </div>
 
 <form [formGroup]="albumForm" (ngSubmit)="onSubmit()"
       [class.valid-form]="(albumTyping === 'maple' || albumTyping === 'francois' || albumTyping === 'banff')
-      && albumForm.status === 'VALID'">
+      && albumForm.status === 'VALID'"
+      [class.bg-jump]="(albumTyping === 'jump')">
   <div>
     <label for="album" class="anim-fulfill">Album</label>
     <input id="album" type="text" [(ngModel)]="albumTyping" formControlName="album" required="required">
@@ -21,6 +22,8 @@
     <button class="anim-underlined" type="submit" [disabled]="!albumForm.valid">Accéder</button>
   </div>
 </form>
+
+
 
 <div class="credits">
   <p>Credits to <a href="https://gitlab.com/Ichoui" class="anim-fulfill" target="_blank">Ichoui®</a></p>

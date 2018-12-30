@@ -18,7 +18,6 @@ export class MapleComponent implements OnInit {
   public images$ = this.imgService.getMaple();
   hideScrollbar = true;
   viewerPopup = false;
-  nameImageAppear = false;
 
   constructor(private imgService: ApiRestService,
               private scriptService: ScriptService,

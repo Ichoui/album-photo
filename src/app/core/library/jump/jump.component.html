@@ -1,3 +1,17 @@
-<p>
-  jump works!
-</p>
+<drag-scroll class="viewport">
+  <ng-masonry-grid
+    class="grid"
+    [masonryOptions]="{ transitionDuration: '0.8s', gutter: 8 }"
+    [useImagesLoaded]="true">
+    <ng-masonry-grid-item *ngFor="let image of images$ | async">
+      <img class="images"
+           (click)="openViewer($event)"
+           src="{{ image.filepath }}"
+           name="{{image.name}}">
+    </ng-masonry-grid-item>
+  </ng-masonry-grid>
+</drag-scroll>
+
+<app-viewer *ngIf="viewerPopup">
+  <div class="close anim-fulfill" (click)="closeViewer()"><span class="icon-cancel"></span></div>
+</app-viewer>
