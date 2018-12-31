@@ -28,6 +28,9 @@
       transform: translate(-50%, -50%);
       left: 50%;
     }
+    .rotater {
+      //display:none;
+    }
   }
 }
 
@@ -47,6 +50,9 @@
       max-width: 95vw;
       max-height: 95vh;
     }
+    .rotater {
+      display: none;
+    }
   }
 
   @include breakpoint(xs) {
@@ -62,6 +68,9 @@
       max-width: 95vw;
       max-height: 95vh;
     }
+    .rotater {
+      display: none;
+    }
   }
 
   @include breakpoint(lg) {
@@ -76,6 +85,29 @@
       height: auto;
       max-height: 85vh;
       //transform: rotate(90deg);
+    }
+    img.portrait-landscape {
+      max-width: 85vh;
+    }
+
+    .rotater {
+      position: absolute;
+      bottom: 5px;
+      display: flex;
+      > div {
+
+      }
+      div:first-child {
+        &:hover {
+          transform: rotate(-10deg)
+        }
+      }
+      div:last-child {
+        margin-left: 10px;
+        &:hover {
+          transform: rotate(10deg)
+        }
+      }
     }
   }
 }

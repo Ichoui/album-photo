@@ -8,9 +8,9 @@ import { zoomIn, zoomOut } from 'ng-animate';
   templateUrl: './viewer.component.html',
   styleUrls: ['./viewer.component.scss'],
   animations: [
-    trigger('zoomIn',[
-        transition('* => *', useAnimation(zoomIn),{params: {timing: .5}}),
-      ]),
+    trigger('zoomIn', [
+      transition('* => *', useAnimation(zoomIn), {params: {timing: .5}}),
+    ]),
   ]
 })
 export class ViewerComponent implements OnInit {
@@ -22,7 +22,7 @@ export class ViewerComponent implements OnInit {
   name;
   format;
   nameAppear = false; // choisir si on affiche ou non le nom d'image
-
+  angle = 0;
 
   ngOnInit() {
     this.src = this.viewerService.src;
@@ -32,9 +32,11 @@ export class ViewerComponent implements OnInit {
     this.orientationImage();
   }
 
+  /*
+  * Permet de définir l'orientation de l'image
+  * */
   orientationImage() {
     let viewedImage = document.getElementById('viewed-image');
-    console.log(this.format);
 
     if (this.format === 'landscape') {
       viewedImage.className = 'landscape';
@@ -43,6 +45,40 @@ export class ViewerComponent implements OnInit {
     }
   }
 
+  /*
+  * Rotate de -90deg par clic
+  * */
+  rotateLeft(): void {
+    let viewedImage = document.getElementById('viewed-image');
+
+    this.angle = this.angle - 90;
+    viewedImage.style.transform = 'rotate(' + this.angle + 'deg)';
+    this.checkingFormat(viewedImage, 'portrait-landscape');
+  }
+
+  /*
+  * Rotate de +90deg par clic
+  * */
+  rotateRight(): void {
+    let viewedImage = document.getElementById('viewed-image');
+    this.angle = this.angle + 90;
+    viewedImage.style.transform = 'rotate(' + this.angle + 'deg)';
+    this.checkingFormat(viewedImage, 'portrait-landscape');
+  }
 
 
+  checkingFormat(image, cls) {
+    if (this.hasClass(image, cls)) {
+      image.className = 'portrait'
+    } else {
+      image.className = 'portrait-landscape'
+    }
+  }
+  /*
+  * Fonction - méthode qui définit si un élément possède une classe précise
+  * Retourne : TRUE / FALSE
+  * */
+  hasClass(element, cls) {
+    return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+  }
 }

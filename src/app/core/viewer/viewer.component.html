@@ -2,4 +2,8 @@
   <ng-content></ng-content>
   <div *ngIf="nameAppear" class="name">{{ name }}</div>
   <img id="viewed-image" src="{{ src }}">
+  <div class="rotater">
+    <div class="rotate-left anim-fulfill" (click)="rotateLeft()">Gauche</div>
+    <div class="rotate-right anim-fulfill" (click)="rotateRight()">Droite</div>
+  </div>
 </div>

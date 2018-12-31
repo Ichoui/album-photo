@@ -27,7 +27,7 @@ export class MapleComponent implements OnInit {
 
   ngOnInit() {
     this.scrollerService.scrollBooster();
-    // this.scriptService.load('app').then(data => data);
+    this.scriptService.load('app').then(data => data);
   }
 
 
