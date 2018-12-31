@@ -17,5 +17,15 @@
    <li><b>SINON</b> remplacer celle présente dans un component similaire (2 lignes : générique, masonry)
    <li><u>Attention</u> à toujours conserver le style Masonry</li>
 
+
+### Déploiement - Firebase
+- firebase login (optionnal)
+- firebase init<ul><li>``Hosting``</li><li>Public directory : ``dist/album-photos``</li><li>App as a single page : ``YES``</li><li>File already exist, overwrite ? ``NO``</li></ul>
+- firebase deploy
+<br>
+Script disponible dans console NPM
+
+https://album.ichoui.fr
+
 ---
 ##### Ce projet est avant tout une application web tournant sous Angular 7.0. Testé sur iPhone 7Plus en responsive.
