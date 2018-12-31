@@ -20,7 +20,7 @@
     align-items: center;
     flex-direction: column;
     img {
-
+      transition: .4s all ease-in-out;
     }
     .name {
       position: absolute;
@@ -29,7 +29,27 @@
       left: 50%;
     }
     .rotater {
-      //display:none;
+      position: absolute;
+      bottom: 5px;
+      display: flex;
+      > div {
+        font-size: 1.3em;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      div:first-child {
+        &:hover {
+          transform: rotate(-30deg)
+        }
+      }
+      div:last-child {
+        margin-left: 15px;
+        transform: scaleX(-1);
+        &:hover {
+          transform: rotate(30deg) scaleX(-1);
+        }
+      }
     }
   }
 }
@@ -90,24 +110,5 @@
       max-width: 85vh;
     }
 
-    .rotater {
-      position: absolute;
-      bottom: 5px;
-      display: flex;
-      > div {
-
-      }
-      div:first-child {
-        &:hover {
-          transform: rotate(-10deg)
-        }
-      }
-      div:last-child {
-        margin-left: 10px;
-        &:hover {
-          transform: rotate(10deg)
-        }
-      }
-    }
   }
 }
