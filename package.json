@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "start": "ng serve --port=4682 --host 0.0.0.0 --open",
-    "build": "ng build"
+    "build": "ng build --prod",
+    "firebase": "firebase deploy"
   },
   "private": true,
   "dependencies": {
