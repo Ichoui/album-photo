@@ -13,28 +13,28 @@ export class ApiRestService {
   }
 
   getMaple(): Observable<Toto[]> {
-    return this.http.get('http://api.ichoui.fr/maple').pipe(
+    return this.http.get('http://api2.ichoui.fr/maple').pipe(
     // @ts-ignore
       map(data => data.images)
     );
   }
 
   getFrancois(): Observable<Toto[]> {
-    return this.http.get('http://api.ichoui.fr/francois').pipe(
+    return this.http.get('http://api2.ichoui.fr/francois').pipe(
       // @ts-ignore
       map(data => data.images)
     );
   }
 
   getBanff(): Observable<Toto[]> {
-    return this.http.get('http://api.ichoui.fr/banff').pipe(
+    return this.http.get('http://api2.ichoui.fr/banff').pipe(
       // @ts-ignore
       map(data => data.images)
     );
   }
 
   getJump(): Observable<Toto[]> {
-    return this.http.get('http://api.ichoui.fr/jump').pipe(
+    return this.http.get('http://api2.ichoui.fr/jump').pipe(
       // @ts-ignore
       map(data => data.images)
     );
