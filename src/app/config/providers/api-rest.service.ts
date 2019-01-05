@@ -13,7 +13,7 @@ export class ApiRestService {
   }
 
   getMaple(): Observable<Toto[]> {
-    return this.http.get('http://api.ichoui.fr/maple').pipe(
+    return this.http.get('https://api.ichoui.fr/maple').pipe(
     // @ts-ignore
       map(data => data.images)
     );
