@@ -5,7 +5,7 @@
     "start": "ng serve --port=4682 --host 0.0.0.0 --open",
     "build": "ng build --prod",
     "firebase": "firebase deploy",
-    "firebase-deploy": "ng build --prod && firebase deploy"
+    "deploy": "ng build --prod && firebase deploy"
   },
   "private": true,
   "dependencies": {
