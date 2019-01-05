@@ -37,8 +37,8 @@ export class MapleComponent implements OnInit {
   }
 
   closeViewer() {
-    // @ts-ignore
     let appViewer = document.getElementsByTagName('app-viewer');
+    // @ts-ignore
     appViewer[0].style.opacity = 0.0;
 
     setTimeout(e => {
