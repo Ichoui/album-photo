@@ -9,6 +9,7 @@ import { ScrollerService } from '../../../config/providers/scroller.service';
   templateUrl: './maple.component.html',
   styleUrls: [
     '../library.component.scss',
+    './maple.component.scss',
     '../../../../../node_modules/ng-masonry-grid/ng-masonry-grid.css'
   ]
 })

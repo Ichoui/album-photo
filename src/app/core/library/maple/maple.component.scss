@@ -1,0 +1,30 @@
+@import "../../../../styles/stylefullpage";
+
+////////////////////// RESPONSIVE //////////////////////
+.viewport {
+  @include breakpoint(xxs) {
+
+  }
+
+  @include breakpoint(xs) {
+    ng-masonry-grid.grid {
+      width: 800vw;
+      min-height: 1000vh;
+    }
+
+  }
+
+  @include breakpoint(lg) {
+
+    ng-masonry-grid.grid {
+      width: 492vw;
+    }
+  }
+
+  @include breakpoint(xxl) {
+    ng-masonry-grid.grid {
+      width: 497vw;
+      min-height: 200vh;
+    }
+  }
+}
