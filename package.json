@@ -5,7 +5,7 @@
     "start": "ng serve --port=4682 --host 0.0.0.0 --open",
     "build": "ng build --prod",
     "firebase": "firebase deploy",
-    "firebase-deploy": "ng build --prod && firebase deploy"
+    "deploy": "ng build --prod && firebase deploy"
   },
   "private": true,
   "dependencies": {
@@ -21,7 +21,7 @@
     "@types/jquery": "^3.3.29",
     "core-js": "^2.5.4",
     "imagesloaded": "^4.1.4",
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.1",
     "masonry": "0.0.2",
     "masonry-layout": "^4.2.2",
     "ng-animate": "^0.3.4",
@@ -33,9 +33,9 @@
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.11.0",
-    "@angular/cli": "~7.1.2",
-    "@angular/compiler-cli": "~7.1.0",
+    "@angular-devkit/build-angular": "^0.13.9",
+    "@angular/cli": "^7.3.9",
+    "@angular/compiler-cli": "^7.2.15",
     "@angular/language-service": "^7.1.4",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",

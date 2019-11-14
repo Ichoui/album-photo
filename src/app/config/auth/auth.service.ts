@@ -10,7 +10,7 @@ export class AuthService {
   }
 
   /*
-  *  @function isAuthenticated()
+  *  @param
   *  Permet de vérifier si la sessionStorage album existe
   *  et donc vérifier si l'utilisateur a pu se connecter avec un bon code d'accès
   *  Lien avec le auth.guard.ts
@@ -22,7 +22,7 @@ export class AuthService {
   }
 
   /*
-  * @function isGlobalFunction()
+  * @param
   * Permet de vérifier la valeur de la clef "Album" dans le localStorage
   * Retourne Nom de l'album / false
   * */
@@ -35,7 +35,8 @@ export class AuthService {
     }
   }
   /*
-  * @function is{Album}
+  * @param
+  * is{Album}
   * Utilisée dans le guard du même nom d'album pour autoriser ou non l'accès à la route demandée
   * */
   public isMaple(): string | boolean {
@@ -56,7 +57,7 @@ export class AuthService {
 
 
   /*
-  * @function logout()
+  * @param
   * Permet de vider à chaque logout le localStorage puis redirige hors de l'application
   * */
   public logout(): void {
@@ -65,7 +66,7 @@ export class AuthService {
   }
 
 
-  /*@function WriteLocalStorage
+  /*@param
   * Ecrit dans le localStorage une key / value
   * album : {album}_key
   * */
