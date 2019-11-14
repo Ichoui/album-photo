@@ -12,8 +12,7 @@ import { ScrollerService } from '../../../config/providers/scroller.service';
     '../../../../../node_modules/ng-masonry-grid/ng-masonry-grid.css'
   ]})
 export class JumpComponent implements OnInit {
-
-
+  
   public images$ = this.imgService.getJump();
   hideScrollbar = true;
   viewerPopup = false;
@@ -28,7 +27,6 @@ export class JumpComponent implements OnInit {
     this.scrollerService.scrollBooster();
     // this.scriptService.load('app').then(data => data);
   }
-
 
   openViewer(event) {
     this.viewerPopup = true;
